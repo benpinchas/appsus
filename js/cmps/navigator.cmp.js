@@ -8,8 +8,8 @@ export default {
         
         <div class="navigation-window" v-if="isOpen">
             <router-link exact to="/"><i class="fas fa-home"></i></router-link>
-            <router-link exact to="/email"><i class="fas fa-envelope-open-text"></i></router-link>
-            <router-link exact to="/keep"><i class="fas fa-sticky-note"></i></router-link>
+            <router-link  to="/email"><i class="fas fa-envelope-open-text"></i></router-link>
+            <router-link  to="/keep"><i class="fas fa-sticky-note"></i></router-link>
         </div>    
         
     </div>
