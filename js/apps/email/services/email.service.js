@@ -33,8 +33,8 @@ gEmails = [
     id: Math.random() + '',
     subject: '3 email',
     body: 'Na Bla bla bla',
-    isRead: false,
-    sentAt: Date.now() -123123123123,
+    isRead: true,
+    sentAt: Date.now() - 123123123123,
     from: {
       name: 'tal',
       email: 'tal@gmail.com'
