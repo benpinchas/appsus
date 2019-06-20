@@ -1,0 +1,26 @@
+.email-preview {
+    background-color: lightgray;
+    margin: 5px;
+    height: 55px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email-preview .name {
+    font-size: 20px;
+}
+
+
+.email-preview .subject-body {
+}
+
+.email-preview .subject {
+    font-size: 20px;
+    font-weight: 500;
+}
+.email-preview .body {
+    font-size: 15px;
+}
+
