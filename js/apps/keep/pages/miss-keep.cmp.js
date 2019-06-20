@@ -9,8 +9,11 @@ export default {
   name: 'MissKeep',
   template: `
         <section class="miss-keep">
-            KEEP APP PAGE
+          <div>
+            <h1>KEEP APP PAGE - COMING SOON...</h1>
+            <img src="../../../../img/under-construction.jpg" />
             <note-list :notes="notes"></note-list>
+          </div>
         </section>
     `,
   data() {
