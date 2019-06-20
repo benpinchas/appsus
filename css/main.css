@@ -1,4 +1,7 @@
 
+/* APPS */
+@import './apps//email/email.css';
+
 @import './cmps/app-header.cmp.css';
 
 * {

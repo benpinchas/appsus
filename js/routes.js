@@ -1,16 +1,10 @@
 
-
-const aboutVision = {
-    template: 
-    `<h1>Our Vision</h1>`  
-}
-const aboutTeam = {
-    template: 
-    `<h1>Our Team</h1>`  
-}
+import homePage from './pages/home-page.cmp.js'
+import emailApp from './apps/email/pages/email-app.cmp.js'
 
 export default [
-    // { path: '/', component: homepageCmp },
+    { path: '/', component: homePage },
+    { path: '/email', component: emailApp },
     // { path: '/about', component: aboutCmp, children:
     //     [
     //         { path: 'vision', component: aboutVision },
