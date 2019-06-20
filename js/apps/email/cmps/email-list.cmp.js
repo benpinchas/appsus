@@ -13,9 +13,7 @@ export default {
   components: {
     emailPreview
   },
-  mounted() {    
-    setInterval(() => {
-      console.log(this.emails);
-    }, 1000)
+  mounted() {
+    this.emails
   }
 };

@@ -15,7 +15,7 @@ export default {
             <main>
               <email-filter @set-filter="setFilter"></email-filter>
               
-              <router-view :emails="emailsForDisplay"></router-view>
+              <router-view v-if="emails" :emails="emailsForDisplay"></router-view>
             </main>
             
         </section>
@@ -23,26 +23,58 @@ export default {
   data() {
     return {
       emails: null,
-      filter: 'all'
+      sent: false,
+      filter: {
+        readState: 'all',
+        onlyStarred: false,
+      }
     };
   },
   created() {
     emailService.query().then(emails => {
       this.emails = emails;
+      this.setFilterByRoute()
     });
   },
   computed: {
     emailsForDisplay() {
-      if (this.filter === 'all') return this.emails;
-      else if (this.filter === 'read')
-        return this.emails.filter(email => email.isRead);
-      else return this.emails.filter(email => !email.isRead);
+      if (this.sent) {
+        return this.emails.sent
+      }
+
+      let emails = this.emails.incomes.filter(email => {
+        if (this.filter.onlyStarred) {
+          return email.isStarred
+        }
+        else return email
+      })
+
+      if (this.filter.readState === 'all') {
+        return emails
+      }
+      else if (this.filter.readState === 'read') {
+        return emails.filter(email => email.isRead);
+      }        
+      else return emails.filter(email => !email.isRead);
     }
   },
   methods: {
-    setFilter(filter) {
+    //TODO: set readState
+    setFilter(filter) { //all , read, unread
       console.log('email App got the filter', filter);
-      this.filter = filter;
+      this.filter.readState = filter;
+    },
+    setFilterByRoute() {
+      if (this.$route.params.theFilter === "sent") {
+          this.sent = true
+      }
+      if (this.$route.params.theFilter === "starred") {
+        this.sent = false
+        this.filter.onlyStarred = true
+      } else if (this.$route.params.theFilter === "inbox") {
+        this.sent = false
+          this.filter.onlyStarred = false
+      }
     }
   },
   components: {
@@ -52,7 +84,7 @@ export default {
   },
   watch:{
     $route (to, from){
-        console.log(to,from);
+       this.setFilterByRoute()
     }
 } 
 };

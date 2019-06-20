@@ -6,7 +6,7 @@ export default {
   template: `
         <div class="email-preview">
               <div class="name">
-                  {{email.from.name}}
+                  {{email.contact.name}}
               </div>
               <div class="subject-body">
                 <span class="subject">{{email.subject}}</span> 

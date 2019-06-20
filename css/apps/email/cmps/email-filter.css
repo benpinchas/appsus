@@ -22,6 +22,12 @@
   font-weight: 300;
 }
 
+.email-filter button:hover {
+  background-color: #adadad4f
+}
+
+
+
 .filter-btns-container {
   font-size: 1.5rem;
 }
