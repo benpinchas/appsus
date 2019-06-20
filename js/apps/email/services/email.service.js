@@ -45,6 +45,78 @@ let gMails = {
         email: 'tal@gmail.com'
       },
       isStarred: true,
+    },
+    {
+      id: Math.random() + '',
+      subject: 'First email',
+      body: 'Bla bla bla',
+      isRead: false,
+      sentAt: Date.now() - 300000,
+      contact: {
+        name: 'ehud',
+        email: 'ehud@gmail.com',
+      },
+      isStarred: false,
+    },
+    {
+      id: Math.random() + '',
+      subject: '2 email',
+      body: 'Bla bla bla',
+      isRead: false,
+      sentAt: Date.now() - 10000,
+      contact: {
+        name: 'ben',
+        email: 'ben@gmail.com'
+      },
+      isStarred: false,
+    },
+    {
+      id: Math.random() + '',
+      subject: '3 email',
+      body: 'Na Bla bla bla',
+      isRead: true,
+      sentAt: Date.now() - 123123123123,
+      contact: {
+        name: 'tal',
+        email: 'tal@gmail.com'
+      },
+      isStarred: true,
+    },
+    {
+      id: Math.random() + '',
+      subject: 'First email',
+      body: 'Bla bla bla',
+      isRead: false,
+      sentAt: Date.now() - 300000,
+      contact: {
+        name: 'ehud',
+        email: 'ehud@gmail.com',
+      },
+      isStarred: false,
+    },
+    {
+      id: Math.random() + '',
+      subject: '2 email',
+      body: 'Bla bla bla',
+      isRead: false,
+      sentAt: Date.now() - 10000,
+      contact: {
+        name: 'ben',
+        email: 'ben@gmail.com'
+      },
+      isStarred: false,
+    },
+    {
+      id: Math.random() + '',
+      subject: '3 email',
+      body: 'Na Bla bla bla',
+      isRead: true,
+      sentAt: Date.now() - 123123123123,
+      contact: {
+        name: 'tal',
+        email: 'tal@gmail.com'
+      },
+      isStarred: true,
     }
   ],
 

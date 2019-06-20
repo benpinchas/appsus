@@ -9,6 +9,9 @@ export default {
                     <button ref='read' @click="emitFilter('read')">Read</button>
                     <button ref='unread' @click="emitFilter('unread')">Unread</button>
                 </div>
+                <div class="sent-msg" v-if="!isIncomeMail">
+                   Sent 
+                </div>
             </main>
         </section>
     `,

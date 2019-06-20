@@ -3,8 +3,9 @@
     border-bottom: 1px solid lightgray;
     height: 57px;
     padding: 15px;
+    padding-right: 30px;
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -24,7 +25,7 @@
 
 
 .email-preview .subject-body {
-    width: 60%;
+    width: 55%;
 }
 
 .email-preview .subject {

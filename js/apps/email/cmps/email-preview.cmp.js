@@ -4,7 +4,7 @@
 export default {
   name: 'emailList',
   template: `
-        <div class="email-preview" v-bind:class="{'unread': !email.isRead}" v-if="email">
+        <div class="email-preview" v-bind:class="{'unread': isIncomeMail && !email.isRead}" v-if="email">
               <div class="name">
                   <span v-if="isIncomeMail" class="star-read-container">
                     <span @click="toggleStar">
@@ -26,6 +26,7 @@ export default {
               </div>
               <div class="time">
                 {{fDate}}
+                <i class="fas fa-trash" style="margin-left:17px; color:#b7b7b7" @click="deleteEmail"></i>
               </div>
         </div>
     `,
@@ -34,18 +35,15 @@ export default {
     fDate() {
       let date = new Date(this.email.sentAt)
       new Date().toLocaleDateString()
-      return date.toString().slice(16, 21) + '  ' + date.toLocaleDateString()
+      return date.toString().slice(16, 21) //+ '  ' + date.toLocaleDateString()
     },
     isIncomeMail() {
       return this.$route.params.theFilter !== "sent";
     }
   },
   methods: {
-    classObject () {
-      return {
-        'unread': !this.email.isRead,
-        'unre': false,
-      }
+    deleteEmail() {
+      console.log('DElete');
     },
     toggleStar() {
       this.email.isStarred = !this.email.isStarred
