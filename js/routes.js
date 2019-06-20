@@ -4,10 +4,8 @@ import keepApp from './apps/keep/pages/miss-keep.cmp.js';
 
 import emailDetails from './apps/email/pages/email-details.cmp.js'
 import emailList from './apps/email/cmps/email-list.cmp.js'
-
 export default [
   { path: '', component: homePage },
-  
   { path: '/email/', component: emailApp, children: [
     {
       path: ':theFilter',

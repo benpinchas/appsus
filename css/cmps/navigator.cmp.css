@@ -16,23 +16,28 @@
 
 .navigator .navigation-window{
     background-color: white;
-    border: 1px solid black;
 
     position: absolute;
     right: 0;
     width: 300px;
+    height: 250px;
+    padding: 10px;
     max-width: 90vw;
+
+    box-shadow: 0 0 12px 0px #00000024;
+    border-radius: 9px;
 
     /* width: 400px; */
     /* max-width: 80%; */
 }
 
 .navigator a {
+    margin: 5px;
     color: black;
     font-size: 50px;
     text-decoration: none;
 }
 
 .navigator a.router-link-active {
-    color: red;
+    color: #0076f6;
 }

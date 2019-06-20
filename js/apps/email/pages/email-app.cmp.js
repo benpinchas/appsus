@@ -31,6 +31,9 @@ export default {
     };
   },
   created() {
+    if (!this.$route.params.theFilter) {
+      this.$router.push('/email/inbox')
+    }
     emailService.query().then(emails => {
       this.emails = emails;
       this.setFilterByRoute()
@@ -84,6 +87,9 @@ export default {
   },
   watch:{
     $route (to, from){
+      if (!this.$route.params.theFilter) {
+        this.$router.push('/email/inbox')
+      }
        this.setFilterByRoute()
     }
 } 
