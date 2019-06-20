@@ -1,9 +1,8 @@
-.email-header {
-  background-color: rgb(123, 165, 199);
+.email-filter {
+  background-color: rgb(235, 175, 175);
 }
 
-.email-header main {
-  background-color: lightgrey;
+.email-filter main {
   height: 70px;
   max-width: 1000px;
   margin: 0 auto;

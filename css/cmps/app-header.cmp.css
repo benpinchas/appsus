@@ -1,11 +1,10 @@
 
 .app-header {
-    background-color: red;
+    background-color: #efefef;
 }
 
 
 .app-header main {
-    background-color: antiquewhite;
     height: 70px;
     max-width: 1000px;
     margin: 0 auto;
