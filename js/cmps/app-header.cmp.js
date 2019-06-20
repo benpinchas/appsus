@@ -1,18 +1,16 @@
-
-import appNavigator from './navigator.cmp.js'
-
+import appNavigator from './navigator.cmp.js';
 
 export default {
-    name: 'appHeader',
-    template: `
+  name: 'appHeader',
+  template: `
     <section class="app-header">
         <main>
-        Appsus header CMP
+        General Appsus header CMP
         <app-navigator></app-navigator>
     </main>
     </section>
     `,
-    components: {
-        appNavigator,
-    }
-}
+  components: {
+    appNavigator
+  }
+};

@@ -1,15 +1,28 @@
+// import emailHeader from '../cmps/email-header.cmp.js'
+import emailService from '../services/email.service.js';
 
-import emailHeader from '../cmps/email-header.cmp.js'
+// CMP
+import emailList from '../cmps/email-list.cmp.js';
 
 export default {
-    name: 'emailApp',
-    template: `
+  name: 'emailApp',
+  template: `
         <section class="email-app">
-            <email-header></email-header>
-            email App page
+            <email-list :emails="emails"></email-list>
         </section>
     `,
-    components: {
-        emailHeader,
-    }
-}
+  data() {
+    return {
+      emails: null
+    };
+  },
+  created() {
+    emailService.query().then(emails => {
+      this.emails = emails;
+      console.log(this.emails);
+    });
+  },
+  components: {
+    emailList
+  }
+};
