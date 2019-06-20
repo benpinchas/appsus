@@ -2,9 +2,26 @@
 
 
 export default {
+    name: 'navigator',
     template: `
-    <div>
-        <button>&#9776;</button>
+    <div class="navigator">
+        <button @click="toggleNavigationWindow"><i class="fas fa-th"></i></button>
+        
+        <div class="navigation-window" v-if="isOpen">
+            <router-link exact to="/"><i class="fas fa-home"></i></router-link>
+            <router-link exact to="/email"><i class="fas fa-envelope-open-text"></i></router-link>
+        </div>    
+        
     </div>
-    `
+    `,
+    data() {
+        return {
+            isOpen: false,
+        }
+    },
+    methods: {
+        toggleNavigationWindow() {
+            this.isOpen = !this.isOpen
+        }
+    }
 }

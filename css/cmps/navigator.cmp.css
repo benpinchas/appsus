@@ -1,0 +1,35 @@
+
+
+.navigator {
+    z-index: 10;
+    position: relative;
+}
+
+.navigator button{
+    cursor: pointer;
+    padding: 15px;
+    font-size: 27px;
+}
+
+.navigator .navigation-window{
+    background-color: white;
+    border: 1px solid black;
+
+    position: absolute;
+    right: 0;
+    width: 300px;
+    max-width: 90vw;
+
+    /* width: 400px; */
+    /* max-width: 80%; */
+}
+
+.navigator a {
+    color: black;
+    font-size: 50px;
+    text-decoration: none;
+}
+
+.navigator a.router-link-exact-active {
+    color: lightcoral;
+}
