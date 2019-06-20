@@ -33,6 +33,6 @@
     text-decoration: none;
 }
 
-.navigator a.router-link-exact-active {
-    color: lightcoral;
+.navigator a.router-link-active {
+    color: red;
 }

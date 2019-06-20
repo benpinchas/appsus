@@ -9,7 +9,7 @@ export default {
                   <email-composer></email-composer>
                   <router-link to="/email/inbox"><i class="fas fa-inbox"></i> Incoming</router-link>
                   <router-link to="/email/starred"><i class="fas fa-star"></i> Starred</router-link>
-                  <router-link to="/sent"><i class="fas fa-paper-plane"></i> Sent</router-link>
+                  <router-link to="/email/sent"><i class="fas fa-paper-plane"></i> Sent</router-link>
                 </main>
           </section>
       `,

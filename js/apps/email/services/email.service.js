@@ -15,8 +15,9 @@ gEmails = [
     sentAt: Date.now() - 300000,
     from: {
       name: 'ehud',
-      email: 'ehud@gmail.com'
-    }
+      email: 'ehud@gmail.com',
+    },
+    isStarred: false,
   },
   {
     id: Math.random() + '',
@@ -27,7 +28,8 @@ gEmails = [
     from: {
       name: 'ben',
       email: 'ben@gmail.com'
-    }
+    },
+    isStarred: false,
   },
   {
     id: Math.random() + '',
@@ -38,7 +40,8 @@ gEmails = [
     from: {
       name: 'tal',
       email: 'tal@gmail.com'
-    }
+    },
+    isStarred: true,
   }
 ];
 

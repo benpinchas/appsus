@@ -14,8 +14,8 @@ export default {
             
             <main>
               <email-filter @set-filter="setFilter"></email-filter>
-              <router-view></router-view>
-              <email-list :emails="emailsForDisplay"></email-list>
+              
+              <router-view :emails="emailsForDisplay"></router-view>
             </main>
             
         </section>
@@ -49,5 +49,10 @@ export default {
     emailList,
     emailMenu,
     emailFilter
-  }
+  },
+  watch:{
+    $route (to, from){
+        console.log(to,from);
+    }
+} 
 };

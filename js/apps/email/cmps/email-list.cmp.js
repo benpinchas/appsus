@@ -12,5 +12,10 @@ export default {
   props: ['emails'],
   components: {
     emailPreview
+  },
+  mounted() {    
+    setInterval(() => {
+      console.log(this.emails);
+    }, 1000)
   }
 };
