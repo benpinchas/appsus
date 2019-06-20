@@ -11,9 +11,12 @@ export default {
   name: 'emailApp',
   template: `
         <section class="email-app">
-              <email-filter></email-filter>
-            <email-list :emails="emails"></email-list>
             <email-menu></email-menu>
+            <main>
+              <email-filter></email-filter>
+              <email-list :emails="emails"></email-list>
+            </main>
+            
         </section>
     `,
   data() {

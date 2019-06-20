@@ -4,8 +4,30 @@
 
 .email-app{ 
     background-color: gray;
+
+    display: flex;    
 }
 
+.email-app main {
+    flex-grow:3;
+}
+
+.email-app .email-menu {
+    flex-grow:1;
+    flex-grow: 1;
+    max-width: 250px;
+}
+
+
 .email-menu {
-    
+    background-color: lightgrey;
+}
+
+
+.email-filter {
+    /* background-color: green; */
+}
+
+.email-list {
+    /* background-color: red; */
 }
