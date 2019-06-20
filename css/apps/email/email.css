@@ -18,6 +18,9 @@
     max-width: 250px;
 }
 
+.email-app {
+    height: calc(100vh - 70px);
+}
 
 .email-menu {
     background-color: lightgrey;
