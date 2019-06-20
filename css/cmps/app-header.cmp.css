@@ -1,0 +1,16 @@
+
+.app-header {
+    background-color: red;
+}
+
+
+.app-header main {
+    background-color: antiquewhite;
+    height: 70px;
+    max-width: 1000px;
+    margin: 0 auto;
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
