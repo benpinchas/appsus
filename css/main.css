@@ -13,3 +13,8 @@ body {
     margin: 0;
     font-family: Rubik;
 }
+
+button {
+    cursor: pointer;
+    outline:none;
+}

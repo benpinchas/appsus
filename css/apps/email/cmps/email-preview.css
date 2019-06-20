@@ -1,6 +1,6 @@
 .email-preview {
-    background-color: lightgray;
     margin-bottom: 5px;
+    border-bottom: 1px solid;
     height: 55px;
     padding: 15px;
     display: flex;

@@ -11,8 +11,10 @@ export default {
   template: `
         <section class="email-app">
             <email-menu></email-menu>
+            
             <main>
               <email-filter @set-filter="setFilter"></email-filter>
+              <router-view></router-view>
               <email-list :emails="emailsForDisplay"></email-list>
             </main>
             
