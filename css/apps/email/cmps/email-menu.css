@@ -1,0 +1,35 @@
+
+.email-menu {
+    /* background-color: aqua !important; */
+}
+.email-menu main {
+    width: 90%;
+}
+
+.email-menu > * > *{
+    padding-left: 20px !important;
+}
+
+.email-menu  a {
+    display: block;
+    
+    font-size: 19px;
+    padding: 8px;
+    letter-spacing: .2px;
+    margin: 5px 0px;
+    color: #202124;
+    text-decoration: none;
+}
+
+.email-menu  a .fas {
+    margin-right: 20px;
+    padding-left: 20px;
+}
+
+
+.email-menu a.router-link-exact-active {
+    background-color: #e8eaed;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+
+}

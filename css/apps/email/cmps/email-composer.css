@@ -1,0 +1,30 @@
+
+/* colored + : https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png */
+
+/* TODO move this menu-specific css to less general place */
+.email-composer {
+    margin-top: 16px;
+    margin-bottom: 40px;  
+}
+
+.email-composer button{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 19px;
+    padding: 13px 10px;
+    padding-right: 20px;
+    border-radius: 33px;
+    border: 1px solid black;
+
+    display: flex;
+    align-items: center;
+}
+
+.email-composer button img {
+    width: 25px;
+    margin-right: 8px;
+}
+
+

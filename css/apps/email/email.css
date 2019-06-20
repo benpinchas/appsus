@@ -1,9 +1,10 @@
 @import './cmps/email-list.css';
 @import './cmps/email-preview.css';
 @import './cmps/email-filter.css';
-
+@import './cmps/email-menu.css';
+@import './cmps/email-composer.css';
 .email-app{ 
-    background-color: gray;
+    background-color: white;
 
     display: flex;    
 }
@@ -23,7 +24,7 @@
 }
 
 .email-menu {
-    background-color: lightgrey;
+    background-color: white;
 }
 
 
