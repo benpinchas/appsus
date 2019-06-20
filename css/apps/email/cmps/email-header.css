@@ -1,15 +1,14 @@
 .email-header {
-    background-color: blue;
+  background-color: rgb(123, 165, 199);
 }
 
-
 .email-header main {
-    background-color: lightgrey;
-    height: 70px;
-    max-width: 1000px;
-    margin: 0 auto;
-   
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: lightgrey;
+  height: 70px;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
