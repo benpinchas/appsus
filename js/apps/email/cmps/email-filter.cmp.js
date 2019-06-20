@@ -4,7 +4,7 @@ export default {
   template: `
         <section class="email-filter">
             <main>
-                <div class="filter-btns-container"> 
+                <div class="filter-btns-container" v-show="isIncomeMail"> 
                     <button ref='all' @click="emitFilter('all')">All</button>
                     <button ref='read' @click="emitFilter('read')">Read</button>
                     <button ref='unread' @click="emitFilter('unread')">Unread</button>
@@ -17,6 +17,11 @@ export default {
       filterBy: 'all',
       currBtn: null
     };
+  },
+  computed: {
+    isIncomeMail() {
+      return this.$route.params.theFilter !== "sent";
+    }
   },
   methods: {
     emitFilter(filterBy) {

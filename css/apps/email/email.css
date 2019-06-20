@@ -17,6 +17,7 @@
     flex-grow:1;
     flex-grow: 1;
     max-width: 250px;
+    border-right: 1px solid #efefef;
 }
 
 .email-app {
