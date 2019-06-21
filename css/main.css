@@ -7,11 +7,17 @@
 
 * {
   box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+html{
+  overflow: hidden;
 }
 
 body {
   margin: 0;
   font-family: sans-serif;
+  overflow-y: hidden;
 }
 
 button {
