@@ -40,7 +40,7 @@ let starterEmails = {
   incomes: [
     {
       id: Math.random() + '',
-      subject: 'ZZZirst email',
+      subject: 'First email',
       body: 'Bla bla bla',
       isRead: false,
       sentAt: Date.now() + 100000,

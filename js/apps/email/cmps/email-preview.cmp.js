@@ -3,9 +3,9 @@
 import {saveEmails} from '../services/email.service.js'
 
 export default {
-  name: 'emailList',
+  name: 'emailPreview',
   template: `
-        <div class="email-preview" v-bind:class="{'unread': isIncomeMail && !email.isRead}" v-if="email">
+        <div class="email-preview" @click="readEmail" v-bind:class="{'unread': isIncomeMail && !email.isRead}" v-if="email">
               <div class="name">
                   <span v-if="isIncomeMail" class="star-read-container">
                     <span @click="toggleStar">
@@ -67,6 +67,9 @@ export default {
     toggleRead() {
       this.email.isRead = !this.email.isRead
       saveEmails()
+    },
+    readEmail() {
+      this.$router.push('/email/read/ada')
     }
   }
 
