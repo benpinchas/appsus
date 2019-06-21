@@ -9,11 +9,13 @@ export default {
                     <button ref='read' @click="emitFilter('read')">Read</button>
                     <button ref='unread' @click="emitFilter('unread')">Unread</button>
                 </div>
+                <div class="sent-msg" v-if="!isIncomeMail">
+                  Sent 
+                </div>
+
+
                 <div class="filter-search-container">
                   <input type="text" @input="searchedTxt" v-model="txt" placeholder="Search..."/>
-                </div>
-                <div class="sent-msg" v-if="!isIncomeMail">
-                   Sent 
                 </div>
             </main>
         </section>

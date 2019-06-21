@@ -15,8 +15,8 @@
   margin: 0 auto;
 
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
+  justify-content: space-between;
 }
 
 .email-filter button {
@@ -37,6 +37,10 @@
   margin-left: 50px;
   height: 30px;
   font-size: 1.5rem;
+
+  border-radius: 7px;
+  border: 1px solid lightgrey;
+  outline: none;
 }
 
 .filter-btns-container {
