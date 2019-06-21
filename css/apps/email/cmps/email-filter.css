@@ -33,13 +33,15 @@
 }
 
 .email-filter input {
-  margin-left: 50px;
+  /* margin-left: 50px; */
   height: 30px;
   font-size: 1.5rem;
   font-weight: 300;
-  border-radius: 7px;
-  border: 1px solid lightgrey;
+  /* border-radius: 7px; */
+  border: none;
   outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid #3f3f3f;
 }
 
 .filter-btns-container {
@@ -56,20 +58,28 @@
 .email-filter .select-style {
   display: inline-block;
   border: 1px solid #ccc;
+  color: black;
   width: 180px;
   border-radius: 30px;
-  background-color: #0076f6;
-  margin-right: 50px;
-  padding-right: 50px;
-  padding-left: 50px;
+  /* background-color: #0076f6; */
+  /* margin-right: 50px; */
+  /* padding-right: 50px; */
+  /* padding-left: 50px; */
+  border-radius: 0;
+  border: none;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .email-filter .select-style select {
   font-size: 20px;
-  color: #f9f9f9;
+  color: black;
   height: 30px;
   width: 130%;
   border: none;
   box-shadow: none;
+  outline: none;
   background: transparent;
+  cursor: pointer;
+  width: 115px;
 }
