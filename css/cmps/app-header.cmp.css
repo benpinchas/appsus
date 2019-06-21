@@ -1,15 +1,49 @@
-
 .app-header {
-    background-color: #efefef;
+  background-color: #efefef;
 }
 
-
 .app-header main {
-    height: 70px;
-    max-width: 95%;
-    margin: 0 auto;
-   
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 70px;
+  max-width: 95%;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 35px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.home-page img {
+  display: block;
+  margin: 0 auto;
+}
+
+.home-page a {
+  text-decoration: none;
+  color: rgb(105, 123, 173);
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.home-page a:active {
+  color: cadetblue;
+}
+
+.home-page a:hover {
+  color: cadetblue;
+}
+
+main {
+  background-image: url('../../img/horse.png');
+  background-repeat: no-repeat;
+  background-position-x: 10%;
+  background-position-y: 110%;
 }
