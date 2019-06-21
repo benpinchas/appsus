@@ -14,8 +14,7 @@ export default {
             <email-menu></email-menu>
             
             <main>
-              <email-filter @set-filter="setFilter" @setSortBy="setSortBy" @searchTxt="searchByTxt"></email-filter>
-              
+              <email-filter @set-filter="setFilter" @setSortBy="setSortBy" @searchTxt="searchByTxt"></email-filter>  
               <router-view v-if="emails" :emails="emailsForDisplay"></router-view>
             </main>
             
@@ -121,7 +120,7 @@ export default {
   },
   watch: {
     $route(to, from) {
-      if (!this.$route.params.theFilter) {
+      if (!this.$route.params.theFilter && !this.$route.params.emailId) {
         this.$router.push('/email/inbox');
       }
       this.setFilterByRoute();
