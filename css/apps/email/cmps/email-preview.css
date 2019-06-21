@@ -1,13 +1,22 @@
 .email-preview {
     cursor: pointer;
-    margin-bottom: 5px;
-    border-bottom: 1px solid;
-    height: 55px;
+    border-bottom: 1px solid lightgray;
+    height: 57px;
     padding: 15px;
+    padding-right: 30px;
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
     align-items: center;
 }
+
+.email-preview .star-read-container {
+    margin-right: 10px;
+    width: 55px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+
 
 .email-preview .name {
     font-size: 20px;
@@ -16,7 +25,7 @@
 
 
 .email-preview .subject-body {
-    width: 60%;
+    width: 55%;
 }
 
 .email-preview .subject {
@@ -25,5 +34,8 @@
 }
 .email-preview .body {
     font-size: 15px;
+}
+.unread {
+   background-color:#f3f3f3;
 }
 

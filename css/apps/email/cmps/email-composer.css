@@ -21,6 +21,12 @@
     align-items: center;
 }
 
+.email-composer button:hover {
+    background-color: #d3d3d31a;
+}   
+
+
+
 .email-composer button img {
     width: 25px;
     margin-right: 8px;
