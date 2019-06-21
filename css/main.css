@@ -24,3 +24,9 @@ button {
   cursor: pointer;
   outline: none;
 }
+
+
+.router-view , .composer{
+  overflow-y: scroll;
+  height: calc(100vh - 150px);
+}

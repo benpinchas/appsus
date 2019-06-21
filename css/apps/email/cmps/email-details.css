@@ -1,8 +1,8 @@
 .email-details {
     background-color: whitesmoke;
     padding: 20px 0;
-    height: calc(100vh - 150px);
-    overflow-y: scroll !important;
+    /* height: calc(100vh - 150px); */
+    /* overflow-y: scroll !important; */
 }
 
 .email-details main {

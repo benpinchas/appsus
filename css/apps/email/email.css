@@ -11,8 +11,9 @@
 }
 
 .email-app main {
-    flex-grow:3;
-    overflow-y: scroll !important;
+    flex-grow: 3;
+    /* overflow-y: scroll !important; */
+    /* height: 100%; */
 }
 
 .email-app .email-menu {
@@ -73,12 +74,14 @@
         background-color: white;
         border-radius: 29px;
     }
+    .email-filter {
+        /* background-color: green; */
+        height: 43px;
+    }
 }
 
 
-.email-filter {
-    /* background-color: green; */
-}
+
 
 .email-list {
     /* background-color: red; */
