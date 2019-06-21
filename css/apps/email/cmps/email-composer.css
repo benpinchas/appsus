@@ -110,5 +110,15 @@
     border-top: 1px solid lightgrey;
 }
 
+@media(max-width:670px) {
+    .composer-window {
+        width: 100%;
+        left:0%;
+    }
+    .composer-window .body textarea {
+        height: 250px;
+    }
+}
+
 
 

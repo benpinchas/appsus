@@ -11,13 +11,15 @@
 }
 
 html{
-  overflow: hidden;
+  overflow-y: hidden;
+  height: 100%;
 }
 
 body {
   margin: 0;
   font-family: sans-serif;
   overflow-y: hidden;
+  height: 100%;
 }
 
 button {

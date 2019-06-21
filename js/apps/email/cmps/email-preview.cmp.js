@@ -8,12 +8,12 @@ export default {
         <div class="email-preview" @click="readEmail" v-bind:class="{'unread': isIncomeMail && !email.isRead}" v-if="email">
               <div class="name">
                   <span v-if="isIncomeMail" class="star-read-container">
-                    <span @click="toggleStar">
+                    <span @click.stop="toggleStar">
                       <i v-if="email.isStarred" style="color:#f7d51c;" class="fas fa-star"></i>
                       <i v-else class="far fa-star" style="color:#b6b4b4"></i>
                     </span>  
                     
-                    <span @click="toggleRead">
+                    <span @click.stop="toggleRead">
                       <i class="far fa-envelope-open" v-if="email.isRead" style="color:#949494;"></i>
                       <i class="fas fa-envelope" v-else></i>
                     </span>
