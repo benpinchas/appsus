@@ -28,7 +28,6 @@ export default {
     `,
   data() {
     return {
-      sortBy: 'date',
       filterBy: 'all',
       currBtn: null,
       txt: ''

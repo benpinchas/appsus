@@ -14,6 +14,6 @@ export default {
     emailPreview
   },
   mounted() {
-    this.emails
+    // this.emails
   }
 };

@@ -14,7 +14,7 @@ export default {
             <email-menu></email-menu>
             
             <main>
-              <email-filter @set-filter="setFilter" @setSortBy="setSortBy" @searchTxt="searchByTxt" :sortBy="sortBy"></email-filter>
+              <email-filter @set-filter="setFilter" @setSortBy="setSortBy" @searchTxt="searchByTxt"></email-filter>
               
               <router-view v-if="emails" :emails="emailsForDisplay"></router-view>
             </main>
@@ -51,7 +51,6 @@ export default {
             .includes(this.filter.txt.toLowerCase());
         });
       }
-
       let emails = this.emails.incomes
         .filter(email => {
           return email.subject
@@ -71,10 +70,10 @@ export default {
       } else return emails.filter(email => !email.isRead);
     },
     emailsForDisplay() {
-      return this.filteredEmails.sort((email1, email2) => {
+      console.log('emailsForDisplay', this.sortBy);
+      let emails = this.filteredEmails.sort((email1, email2) => {
         if (this.sortBy === 'subject') {
           console.log('SUBJECT SORT');
-          console.log(email1.subject.toLowerCase() > email2.subject.toLowerCase());
           if (email1.subject.toLowerCase() > email2.subject.toLowerCase()) return 1
           else if(email1.subject.toLowerCase() < email2.subject.toLowerCase()) return -1
           else return 0
@@ -83,6 +82,8 @@ export default {
           return email2.sentAt - email1.sentAt
         }
       })
+      //TODO: why we need to filter so vue will re-render
+      return emails.filter(email => email)
     }
   },
   methods: {
@@ -92,9 +93,9 @@ export default {
       console.log('email App got the filter', filter);
       this.filter.readState = filter;
     },
-    setSortBy(srotBy) {
-      console.log(srotBy);
-      this.sortBy = srotBy;
+    setSortBy(sortBy) {
+      console.log(sortBy);
+      this.sortBy = sortBy;
       console.log(this.sortBy);
     },
     setFilterByRoute() {
@@ -125,5 +126,8 @@ export default {
       }
       this.setFilterByRoute();
     }
+  },
+  mounted() {
+    // console.log(this.emailsForDisplay);
   }
 };
