@@ -13,10 +13,16 @@ export default {
                   Sent 
                 </div>
 
-
                 <div class="filter-search-container">
                   <input type="text" @input="searchedTxt" v-model="txt" placeholder="Search..."/>
                 </div>
+
+                <div class="sort-container select-style">
+                  <select>
+                    <option value="date">By Date</option>
+                    <option value="title">By Title</option>
+                  </select>
+                  </div>
             </main>
         </section>
     `,

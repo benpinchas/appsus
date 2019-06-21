@@ -8,7 +8,6 @@
   font-weight: 300;
 }
 
-
 .email-filter main {
   height: 55px;
   width: 97%;
@@ -50,4 +49,27 @@
 .email-filter button.selected-btn {
   background-color: #0076f6;
   color: white;
+}
+
+/* sort */
+
+.email-filter .select-style {
+  display: inline-block;
+  border: 1px solid #ccc;
+  width: 180px;
+  border-radius: 30px;
+  background-color: #0076f6;
+  margin-right: 50px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+
+.email-filter .select-style select {
+  font-size: 20px;
+  color: #f9f9f9;
+  height: 30px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background: transparent;
 }
