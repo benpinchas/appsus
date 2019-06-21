@@ -31,6 +31,46 @@
 }
 
 
+@media(max-width:670px) {
+    .email-app {
+        flex-direction: column;
+    }
+    .email-app .email-menu {
+        max-width: 100%;
+    }
+    .email-app .email-menu main {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 97%;
+        margin: 0 auto;
+    }
+    .email-menu > * > * {
+        padding-left: 0px !important;
+    }
+    .email-menu a {
+        font-size: 12px;
+    }
+    .email-composer {
+        flex-basis: 100%;
+    }
+    .email-composer button.compose-btn {
+        font-size: 18px;
+    }
+    .email-composer button img {
+        width: 20px;
+    }
+    .email-composer {
+        margin: 5px 0;
+        position: fixed;
+        z-index: 10;
+        bottom: 10px;
+        background-color: white;
+        border-radius: 29px;
+    }
+}
+
+
 .email-filter {
     /* background-color: green; */
 }
@@ -38,3 +78,4 @@
 .email-list {
     /* background-color: red; */
 }
+

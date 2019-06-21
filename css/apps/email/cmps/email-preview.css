@@ -43,3 +43,24 @@
 .unread  .subject {
     font-weight: 600;
 }
+
+
+
+
+@media(max-width:670px) {
+    .email-preview .name {
+        font-size: 15px;
+        width: 27%;
+    }
+    .email-preview .star-read-container {
+        width: 40px;
+    }
+
+    .email-preview .subject-body {
+        width: 40%;
+    }
+
+    .email-preview .subject {
+        font-size: 15px;
+    }
+}

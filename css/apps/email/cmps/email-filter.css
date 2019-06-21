@@ -12,7 +12,6 @@
   height: 55px;
   width: 97%;
   margin: 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,4 +81,20 @@
   background: transparent;
   cursor: pointer;
   width: 115px;
+}
+
+@media(max-width:670px) {
+  .sort-container.select-style, .filter-search-container {
+    display: none;
+  }
+  .email-filter main {
+    align-items: center;
+    justify-content: center;
+    height: 47px;
+  }
+
+  .email-filter button {
+    height: 25px;
+    font-size: 17px;
+  }
 }
