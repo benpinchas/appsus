@@ -1,14 +1,37 @@
 'use strict';
 
+import {storageService} from '../../../services/storage-service.js'
+
 export default {
   query
 };
+const EMAILS_KEY = 'ehudBenEmails'
+
+let gEmails = null;
 
 function query() {
-  return Promise.resolve(gMails);
+  return storageService.load(EMAILS_KEY)
+    .then(emails => {
+      if (emails)  {
+        gEmails = emails
+        return gEmails
+      }
+      else {
+        gEmails = starterEmails
+        return storageService.store(EMAILS_KEY ,emails)
+            .then(() => {
+              return gEmails
+            })
+      }
+    })
 }
 
-let gMails = {
+export function saveEmails() {
+  return storageService.store(EMAILS_KEY, gEmails)
+}
+
+
+let starterEmails = {
   incomes: [
     {
       id: Math.random() + '',

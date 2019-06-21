@@ -1,5 +1,6 @@
 'use strict';
 
+import {saveEmails} from '../services/email.service.js'
 
 export default {
   name: 'emailList',
@@ -47,9 +48,11 @@ export default {
     },
     toggleStar() {
       this.email.isStarred = !this.email.isStarred
+      saveEmails()
     },
     toggleRead() {
       this.email.isRead = !this.email.isRead
+      saveEmails()
     }
   }
 
