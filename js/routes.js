@@ -8,12 +8,12 @@ export default [
   { path: '', component: homePage },
   { path: '/email/', component: emailApp, children: [
     {
-      path: 'read/:emailId',
-      component: emailDetails
-    },
-    {
       path: ':theFilter',
       component: emailList
+    },
+    {
+      path: ':theFilter/read/:emailId',
+      component: emailDetails
     },
     
   ]},

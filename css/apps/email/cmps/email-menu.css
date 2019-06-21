@@ -27,7 +27,7 @@
 }
 
 
-.email-menu a.router-link-exact-active {
+.email-menu a.router-link-exact-active, .email-menu .router-link-active {
     background-color: #e8eaed;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;

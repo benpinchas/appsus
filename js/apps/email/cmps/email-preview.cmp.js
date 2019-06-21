@@ -69,7 +69,8 @@ export default {
       saveEmails()
     },
     readEmail() {
-      this.$router.push('/email/read/ada')
+      console.log(this.$route.fullPath)
+      this.$router.push(this.$route.fullPath+'/read/ada')
     }
   }
 
