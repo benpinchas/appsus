@@ -13,7 +13,7 @@ export default {
                     </span>  
                     
                     <span @click="toggleRead">
-                      <i class="far fa-envelope-open" v-if="email.isRead"></i>
+                      <i class="far fa-envelope-open" v-if="email.isRead" style="color:#949494;"></i>
                       <i class="fas fa-envelope" v-else></i>
                     </span>
                 </span>
