@@ -21,9 +21,9 @@ export default {
                   {{email.contact.name}}
               </div>
               <div class="subject-body">
-                <span class="subject">{{email.subject}}</span> 
+                <span class="subject">{{fSubject}}</span> 
                 -
-                <span class="body">{{email.body}}</span> 
+                <span class="body">{{fBody}}</span> 
               </div>
               <div class="time">
                 {{fDate}}
@@ -33,6 +33,20 @@ export default {
     `,
   props: ['email'],
   computed: {
+    fBody() {
+      if (this.email.body.length > 14) {
+        return this.email.body.slice(0,14)+'..'
+      } else {
+        return this.email.body
+      }
+    },
+    fSubject() {
+      if (this.email.subject.length > 14) {
+        return this.email.subject.slice(0,14)+'..'
+      } else {
+        return this.email.subject
+      }
+    },
     fDate() {
       let date = new Date(this.email.sentAt)
       new Date().toLocaleDateString()

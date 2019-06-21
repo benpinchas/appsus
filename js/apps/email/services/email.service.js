@@ -15,10 +15,9 @@ function query() {
       if (emails)  {
         gEmails = emails
         return gEmails
-      }
-      else {
+      } else {
         gEmails = starterEmails
-        return storageService.store(EMAILS_KEY ,emails)
+        return storageService.store(EMAILS_KEY ,gEmails)
             .then(() => {
               return gEmails
             })
@@ -30,9 +29,70 @@ export function saveEmails() {
   return storageService.store(EMAILS_KEY, gEmails)
 }
 
+export function sendEmail(email) {
+  gEmails.incomes.unshift(email)
+  gEmails.sent.unshift(email)
+}
+
 
 let starterEmails = {
   incomes: [
+    {
+      id: Math.random() + '',
+      subject: 'First email',
+      body: 'Bla bla bla',
+      isRead: false,
+      sentAt: Date.now() - 300000,
+      contact: {
+        name: 'ehud',
+        email: 'ehud@gmail.com',
+      },
+      isStarred: false,
+    },{
+      id: Math.random() + '',
+      subject: 'First email',
+      body: 'Bla bla bla',
+      isRead: false,
+      sentAt: Date.now() - 300000,
+      contact: {
+        name: 'ehud',
+        email: 'ehud@gmail.com',
+      },
+      isStarred: false,
+    },{
+      id: Math.random() + '',
+      subject: 'First email',
+      body: 'Bla bla bla',
+      isRead: false,
+      sentAt: Date.now() - 300000,
+      contact: {
+        name: 'ehud',
+        email: 'ehud@gmail.com',
+      },
+      isStarred: false,
+    },{
+      id: Math.random() + '',
+      subject: 'First email',
+      body: 'Bla bla bla',
+      isRead: false,
+      sentAt: Date.now() - 300000,
+      contact: {
+        name: 'ehud',
+        email: 'ehud@gmail.com',
+      },
+      isStarred: false,
+    },{
+      id: Math.random() + '',
+      subject: 'First email',
+      body: 'Bla bla bla',
+      isRead: false,
+      sentAt: Date.now() - 300000,
+      contact: {
+        name: 'ehud',
+        email: 'ehud@gmail.com',
+      },
+      isStarred: false,
+    },
     {
       id: Math.random() + '',
       subject: 'First email',

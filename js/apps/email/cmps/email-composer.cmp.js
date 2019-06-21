@@ -1,5 +1,7 @@
 'use strict';
 
+import {sendEmail} from '../services/email.service.js'
+
 export default {
     name: 'emailComposer',
     template: `
@@ -13,14 +15,14 @@ export default {
                     <main>
                         <div class="contact"> 
                             <input ref="emailInput" type="text" placeholder="Email Address"> 
-                            <input type="text" placeholder="Subject"> 
+                            <input ref="subject" type="text" placeholder="Subject"> 
                         </div>
                         <div class="body">
-                            <textarea resizeable="false">
+                            <textarea ref="body" resizeable="false">
                             </textarea>
 </div> 
                         <div class="send-container">
-                            <button class="send-btn">Send</button>
+                            <button class="send-btn" @click="sendEmail">Send</button>
                         </div>     
                     </main>      
                 </div>
@@ -40,6 +42,23 @@ export default {
                     this.$refs.emailInput.focus()
                 }, 100)
             }
+        },
+        sendEmail() {
+            console.log('sendEmail');
+            let email = {
+                id: Math.random() + '',
+                subject: this.$refs.subject.value,
+                body: this.$refs.body.value,
+                isRead: false,
+                sentAt: Date.now(),
+                contact: {
+                  name: 'Me',
+                  email: this.$refs.emailInput.value,
+                },
+                isStarred: false,
+              }
+              
+              sendEmail(email)
         }
     }
 };
