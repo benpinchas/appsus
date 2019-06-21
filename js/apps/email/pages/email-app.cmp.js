@@ -45,13 +45,17 @@ export default {
     emailsForDisplay() {
       if (this.sent) {
         return this.emails.sent.filter(email => {
-          return email.subject.includes(this.filter.txt);
+          return email.subject
+            .toLowerCase()
+            .includes(this.filter.txt.toLowerCase());
         });
       }
 
       let emails = this.emails.incomes
         .filter(email => {
-          return email.subject.includes(this.filter.txt);
+          return email.subject
+            .toLowerCase()
+            .includes(this.filter.txt.toLowerCase());
         })
         .filter(email => {
           if (this.filter.onlyStarred) {
