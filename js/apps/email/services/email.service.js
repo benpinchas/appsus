@@ -32,6 +32,7 @@ export function saveEmails() {
 export function sendEmail(email) {
   gEmails.incomes.unshift(email)
   gEmails.sent.unshift(email)
+  saveEmails()
 }
 
 
@@ -39,10 +40,10 @@ let starterEmails = {
   incomes: [
     {
       id: Math.random() + '',
-      subject: 'First email',
+      subject: 'ZZZirst email',
       body: 'Bla bla bla',
       isRead: false,
-      sentAt: Date.now() - 300000,
+      sentAt: Date.now() + 100000,
       contact: {
         name: 'ehud',
         email: 'ehud@gmail.com',

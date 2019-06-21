@@ -14,7 +14,7 @@ export default {
             <email-menu></email-menu>
             
             <main>
-              <email-filter @set-filter="setFilter" @searchTxt="searchByTxt"></email-filter>
+              <email-filter @set-filter="setFilter" @setSortBy="setSortBy" @searchTxt="searchByTxt" :sortBy="sortBy"></email-filter>
               
               <router-view v-if="emails" :emails="emailsForDisplay"></router-view>
             </main>
@@ -25,6 +25,7 @@ export default {
     return {
       emails: null,
       sent: false,
+      sortBy: 'date', // 'date', 's'
       filter: {
         readState: 'all',
         onlyStarred: false,
@@ -42,7 +43,7 @@ export default {
     });
   },
   computed: {
-    emailsForDisplay() {
+    filteredEmails() {
       if (this.sent) {
         return this.emails.sent.filter(email => {
           return email.subject
@@ -68,6 +69,20 @@ export default {
       } else if (this.filter.readState === 'read') {
         return emails.filter(email => email.isRead);
       } else return emails.filter(email => !email.isRead);
+    },
+    emailsForDisplay() {
+      return this.filteredEmails.sort((email1, email2) => {
+        if (this.sortBy === 'subject') {
+          console.log('SUBJECT SORT');
+          console.log(email1.subject.toLowerCase() > email2.subject.toLowerCase());
+          if (email1.subject.toLowerCase() > email2.subject.toLowerCase()) return 1
+          else if(email1.subject.toLowerCase() < email2.subject.toLowerCase()) return -1
+          else return 0
+        } else {
+          console.log('DATE SORT');
+          return email2.sentAt - email1.sentAt
+        }
+      })
     }
   },
   methods: {
@@ -76,6 +91,11 @@ export default {
       //all , read, unread
       console.log('email App got the filter', filter);
       this.filter.readState = filter;
+    },
+    setSortBy(srotBy) {
+      console.log(srotBy);
+      this.sortBy = srotBy;
+      console.log(this.sortBy);
     },
     setFilterByRoute() {
       if (this.$route.params.theFilter === 'sent') {

@@ -18,9 +18,9 @@ export default {
                 </div>
 
                 <div class="sort-container select-style">
-                  <select>
+                  <select @change="setSortBy($event)">
                     <option value="date">By Date</option>
-                    <option value="title">By Title</option>
+                    <option value="subject">By Subject</option>
                   </select>
                   </div>
             </main>
@@ -28,6 +28,7 @@ export default {
     `,
   data() {
     return {
+      sortBy: 'date',
       filterBy: 'all',
       currBtn: null,
       txt: ''
@@ -48,6 +49,9 @@ export default {
     },
     searchedTxt() {
       this.$emit('searchTxt', this.txt);
+    },
+    setSortBy(ev) {
+      this.$emit('setSortBy', ev.target.value)
     }
   },
   mounted() {
