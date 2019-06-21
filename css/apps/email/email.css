@@ -12,6 +12,7 @@
 
 .email-app main {
     flex-grow: 3;
+    /* height: auto; */
     /* overflow-y: scroll !important; */
     /* height: 100%; */
 }
