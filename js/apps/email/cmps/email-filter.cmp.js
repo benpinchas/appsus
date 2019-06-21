@@ -5,9 +5,9 @@ export default {
         <section class="email-filter">
             <main>
                 <div class="filter-btns-container"> 
-                    <button ref='all' @click="emitFilter('all')">All</button>
-                    <button ref='read' @click="emitFilter('read')">Read</button>
-                    <button ref='unread' @click="emitFilter('unread')">Unread</button>
+                    <button ref='all' @click="emitFilter('all')" :disabled="sent">All</button>
+                    <button ref='read' @click="emitFilter('read')" :disabled="sent">Read</button>
+                    <button ref='unread' @click="emitFilter('unread')" :disabled="sent">Unread</button>
                 </div>
                 <div class="filter-search-container">
                   <input type="text" @input="searchedTxt" v-model="txt" placeholder="Search..."/>
@@ -16,6 +16,7 @@ export default {
             </main>
         </section>
     `,
+  props: ['sent'],
   data() {
     return {
       filterBy: 'all',
