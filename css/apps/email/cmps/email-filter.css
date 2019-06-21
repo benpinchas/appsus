@@ -8,7 +8,7 @@
   margin: 0 auto;
 
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
 }
 
@@ -23,10 +23,14 @@
 }
 
 .email-filter button:hover {
-  background-color: #adadad4f
+  background-color: #adadad4f;
 }
 
-
+.email-filter input {
+  margin-left: 50px;
+  height: 30px;
+  font-size: 1.5rem;
+}
 
 .filter-btns-container {
   font-size: 1.5rem;

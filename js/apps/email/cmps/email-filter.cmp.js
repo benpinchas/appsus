@@ -9,13 +9,18 @@ export default {
                     <button ref='read' @click="emitFilter('read')">Read</button>
                     <button ref='unread' @click="emitFilter('unread')">Unread</button>
                 </div>
+                <div class="filter-search-container">
+                  <input type="text" @input="searchedTxt" v-model="txt" placeholder="Search..."/>
+                  <!-- {{filterBy.txt}} -->
+                </div>
             </main>
         </section>
     `,
   data() {
     return {
       filterBy: 'all',
-      currBtn: null
+      currBtn: null,
+      txt: ''
     };
   },
   methods: {
@@ -25,10 +30,13 @@ export default {
       this.currBtn.classList.add('selected-btn');
       this.filterBy = filterBy;
       this.$emit('set-filter', this.filterBy);
+    },
+    searchedTxt() {
+      this.$emit('searchTxt', this.txt);
     }
   },
   mounted() {
-    this.currBtn = this.$refs['all'];
+    this.currBtn = this.$refs.all;
     this.emitFilter(this.filterBy);
   }
 };
