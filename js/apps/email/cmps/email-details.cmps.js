@@ -5,7 +5,7 @@ import { getEmailById } from '../services/email.service.js'
 
 let reaplayCmp = {
     template: `<div class="replay-cmp">
-                    <p>Re: {{replay.txt}} </p>
+                    <p class="replay-txt"><span style="font-weight: 700;">Re: </span>{{replay.txt}} </p>
                     <p class="light"> {{fDate}}</p>
                 </div>`,
     props: ['replay'],

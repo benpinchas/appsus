@@ -7,7 +7,7 @@ import { getLorem } from '../../../services/util-service.js'
 export default {
   query
 };
-const EMAILS_KEY = 'ehudBenEmails2'
+const EMAILS_KEY = 'ehudBenEmails3'
 
 let gEmails = null;
 
@@ -48,7 +48,7 @@ export function getEmailById(id) {
     } else {
       for (let key in gEmails) {
         let email = gEmails[key].find(email => email.id === id)
-        resolve(email)
+        if (email) resolve(email)
       }
     }
     
@@ -85,6 +85,10 @@ let starterEmails = {
         email: 'ehud@gmail.com',
       },
       isStarred: false,
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+        {txt:'Seconed replay good to see', time:Date.now()}
+      ]
     }, {
       id: Math.random() + '',
       subject: 'First email',
@@ -96,6 +100,10 @@ let starterEmails = {
         email: 'ehud@gmail.com',
       },
       isStarred: false,
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+        {txt:'Seconed replay good to see', time:Date.now()}
+      ]
     }, {
       id: Math.random() + '',
       subject: getLorem(),
@@ -107,6 +115,10 @@ let starterEmails = {
         email: 'ehud@gmail.com',
       },
       isStarred: false,
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+        {txt:'Seconed replay good to see', time:Date.now()}
+      ]
     }, {
       id: Math.random() + '',
       subject: 'First email',
@@ -118,6 +130,10 @@ let starterEmails = {
         email: 'ehud@gmail.com',
       },
       isStarred: false,
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+        {txt:'Seconed replay good to see', time:Date.now()}
+      ]
     },
     {
       id: Math.random() + '',
@@ -130,6 +146,10 @@ let starterEmails = {
         email: 'ehud@gmail.com',
       },
       isStarred: false,
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+        {txt:'Seconed replay good to see', time:Date.now()}
+      ]
     },
     {
       id: Math.random() + '',
@@ -142,6 +162,10 @@ let starterEmails = {
         email: 'ben@gmail.com'
       },
       isStarred: false,
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+        {txt:'Seconed replay good to see', time:Date.now()}
+      ]
     },
     {
       id: Math.random() + '',
@@ -154,6 +178,10 @@ let starterEmails = {
         email: 'tal@gmail.com'
       },
       isStarred: true,
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+        {txt:'Seconed replay good to see', time:Date.now()}
+      ]
     },
     {
       id: Math.random() + '',
@@ -166,10 +194,14 @@ let starterEmails = {
         email: 'ehud@gmail.com',
       },
       isStarred: false,
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+        {txt:'Seconed replay good to see', time:Date.now()}
+      ]
     },
     {
       id: Math.random() + '',
-      subject: '2 email',
+      subject: 'No replays yet',
       body: 'Bla bla bla',
       isRead: false,
       sentAt: Date.now() - 10000,
@@ -178,6 +210,9 @@ let starterEmails = {
         email: 'ben@gmail.com'
       },
       isStarred: false,
+      replays:[
+        
+      ]
     },
     {
       id: Math.random() + '',
@@ -190,6 +225,9 @@ let starterEmails = {
         email: 'tal@gmail.com'
       },
       isStarred: true,
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+      ]
     },
     {
       id: Math.random() + '',
@@ -202,6 +240,9 @@ let starterEmails = {
         email: 'ehud@gmail.com',
       },
       isStarred: false,
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+      ]
     },
     {
       id: Math.random() + '',
@@ -214,6 +255,9 @@ let starterEmails = {
         email: 'ben@gmail.com'
       },
       isStarred: false,
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+      ]
     },
     {
       id: Math.random() + '',
@@ -226,6 +270,9 @@ let starterEmails = {
         email: 'tal@gmail.com'
       },
       isStarred: true,
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+      ]
     }
   ],
 
@@ -239,6 +286,9 @@ let starterEmails = {
         name: 'bobi',
         email: 'bobi@gmail.com',
       },
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+      ]
     },
     {
       id: Math.random() + '',
@@ -249,6 +299,9 @@ let starterEmails = {
         name: 'Momo',
         email: 'bobi@gmail.com',
       },
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+      ]
     },
     {
       id: Math.random() + '',
@@ -259,6 +312,9 @@ let starterEmails = {
         name: 'Bob',
         email: 'bobi@gmail.com',
       },
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+      ]
     },
     {
       id: Math.random() + '',
@@ -269,6 +325,9 @@ let starterEmails = {
         name: 'Nami',
         email: 'bobi@gmail.com',
       },
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+      ]
     },
     {
       id: Math.random() + '',
@@ -279,6 +338,9 @@ let starterEmails = {
         name: 'Nami',
         email: 'bobi@gmail.com',
       },
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+      ]
     },
     {
       id: Math.random() + '',
@@ -289,6 +351,9 @@ let starterEmails = {
         name: 'Nami',
         email: 'bobi@gmail.com',
       },
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+      ]
     },
   ]
 

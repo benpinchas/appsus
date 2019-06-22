@@ -20,7 +20,7 @@
 
 .email-details .body {
     max-width: 750px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     color: #3c3c3c;
 }
 
@@ -35,6 +35,7 @@
     border-radius: 7px;
     width: 100%;
     box-shadow: 0 0 6px #d6d6d6;
+    margin-top: 40px;
 }
 
 .email-details .send-btn {
@@ -70,6 +71,15 @@
     justify-content: space-between;
     margin-bottom: 5px;
     color: #262626;
+    box-shadow: 0 0 3px #cecece;
+    padding: 10px;
+    border-radius: 9px;
+}
+
+.replay-cmp .replay-txt {
+    overflow-x: auto;
+    width: 85%;
+
 }
 
 
