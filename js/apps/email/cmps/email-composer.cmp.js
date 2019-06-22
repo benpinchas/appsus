@@ -5,6 +5,7 @@ import {sendEmail} from '../services/email.service.js'
 export default {
     name: 'emailComposer',
     template: `
+    <!-- v-on:keyup.enter="sendEmail" -->
           <div class="email-composer">
                <button @click="toggleComposerWindow" class="compose-btn"><img src="https://www.gstatic.com/images/icons/material/colored_icons/1x/create_32dp.png"/> Compose</button>
 
@@ -14,7 +15,7 @@ export default {
                     </div>
                     <main>
                         <div class="contact"> 
-                            <input ref="emailInput" type="text" placeholder="Email Address"> 
+                            <input ref="emailInput" type="text" placeholder="Email Address" value="me@gmail.com"> 
                             <input ref="subject" type="text" placeholder="Subject"> 
                         </div>
                         <div class="body">
@@ -39,12 +40,13 @@ export default {
             //TODO: in a cleaner way
             if (this.isOpen) {
                 setTimeout(() => {
-                    this.$refs.emailInput.focus()
+                    this.$refs.subject.focus()
                 }, 100)
             }
         },
         sendEmail() {
             console.log('sendEmail');
+            if (!this.$refs.subject.value || !this.$refs.body.value) return
             let email = {
                 id: Math.random() + '',
                 subject: this.$refs.subject.value,
@@ -56,9 +58,14 @@ export default {
                   email: 'me@gmail.com',
                 },
                 isStarred: false,
+                replays: []
               }
-              
               sendEmail(email)
+              this.toggleComposerWindow()
+              this.$refs.subject.value = ''
+              this.$refs.body.value = ''
+              this.$router.push('/email/inbox')
+              
         }
     }
 };

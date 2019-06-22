@@ -7,7 +7,7 @@ import { getLorem } from '../../../services/util-service.js'
 export default {
   query
 };
-const EMAILS_KEY = 'ehudBenEmails3'
+const EMAILS_KEY = 'ehudBenEmails6'
 
 let gEmails = null;
 
@@ -106,8 +106,8 @@ let starterEmails = {
       ]
     }, {
       id: Math.random() + '',
-      subject: getLorem(),
-      body: 'Bla bla bla',
+      subject: 'Nice Day',
+      body: getLorem(),
       isRead: false,
       sentAt: Date.now() - 33000,
       contact: {
@@ -154,7 +154,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: '2 email',
-      body: 'Bla bla bla',
+      body: getLorem(),
       isRead: false,
       sentAt: Date.now() - 10000,
       contact: {
@@ -169,8 +169,8 @@ let starterEmails = {
     },
     {
       id: Math.random() + '',
-      subject: '3 email',
-      body: 'Na Bla bla bla',
+      subject: 'Get A Car',
+      body: getLorem(),
       isRead: true,
       sentAt: Date.now() - 123123123123,
       contact: {
@@ -202,7 +202,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: 'No replays yet',
-      body: 'Bla bla bla',
+      body: getLorem(),
       isRead: false,
       sentAt: Date.now() - 10000,
       contact: {
@@ -217,7 +217,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: '3 email',
-      body: 'Na Bla bla bla',
+      body: getLorem(),
       isRead: true,
       sentAt: Date.now() - 123123123123,
       contact: {
@@ -232,7 +232,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: 'First email',
-      body: 'Bla bla bla',
+      body: getLorem(),
       isRead: false,
       sentAt: Date.now() - 30220000,
       contact: {
@@ -247,7 +247,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: '2 email',
-      body: 'Bla bla bla',
+      body: getLorem(),
       isRead: false,
       sentAt: Date.now() - 1001100,
       contact: {
@@ -262,7 +262,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: '3 email',
-      body: 'Na Bla bla bla',
+      body: getLorem(),
       isRead: true,
       sentAt: Date.now() - 123123123123,
       contact: {
@@ -280,7 +280,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: 'Sent',
-      body: 'Bla bla bla',
+      body: getLorem(),
       sentAt: Date.now(),
       contact: {
         name: 'bobi',
@@ -293,7 +293,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: 'Sent2',
-      body: 'Bla bla bla',
+      body: getLorem(),
       sentAt: Date.now(),
       contact: {
         name: 'Momo',
@@ -306,7 +306,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: 'Good Day',
-      body: 'Bla efwefewf bla',
+      body: getLorem(),
       sentAt: Date.now(),
       contact: {
         name: 'Bob',
@@ -319,7 +319,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: 'Hello Avi',
-      body: 'Bla efwefewf bla',
+      body: getLorem(),
       sentAt: Date.now(),
       contact: {
         name: 'Nami',
@@ -332,7 +332,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: 'Sent to Moshe',
-      body: 'Bla efwefewf bla',
+      body: getLorem(),
       sentAt: Date.now(),
       contact: {
         name: 'Nami',
@@ -345,7 +345,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: 'Goddbye',
-      body: 'Bla efwefewf bla',
+      body: getLorem(),
       sentAt: Date.now(),
       contact: {
         name: 'Nami',
