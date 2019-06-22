@@ -27,7 +27,7 @@ export default {
               </div>
               <div class="time">
                 {{fDate}}
-                <i class="fas fa-trash" style="margin-left:17px; color:#b7b7b7" @click.stop="deleteThisEmail"></i>
+                <i class="fas fa-trash" @click.stop="deleteThisEmail"></i>
               </div>
         </div>
     `,

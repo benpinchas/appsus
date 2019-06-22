@@ -44,9 +44,11 @@ button {
   font-size: 14px;
 }
 
+
+
 @media(max-width:670px) {
   .router-view {
-    margin-bottom: 100px;
+    padding-bottom: 100px;
   }
 }
 

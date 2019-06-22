@@ -3,7 +3,7 @@
 import { saveEmails } from '../services/email.service.js'
 import { getEmailById } from '../services/email.service.js'
 
-let reaplayCmp = {
+let replayCmp = {
     template: `<div class="replay-cmp">
                     <p class="replay-txt"><span style="font-weight: 700;">Re: </span>{{replay.txt}} </p>
                     <p class="light"> {{fDate}}</p>
@@ -32,7 +32,7 @@ export default {
                     {{email.body}}
                 </p>
                 
-                <reaplay-cmp v-for="replay in email.replays" :replay="replay"></reaplay-cmp>
+                <replay-cmp v-for="replay in email.replays" :replay="replay"></replay-cmp>
                 
                 <!-- v-on:keydown.enter="addReplay" -->
                 <div class="replay-container" >   
@@ -79,7 +79,7 @@ export default {
             })
     },
     components: {
-        reaplayCmp
+        replayCmp
     }
 
 };

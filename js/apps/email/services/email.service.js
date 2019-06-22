@@ -6,7 +6,7 @@ import { getLorem } from '../../../services/util-service.js';
 export default {
   query
 };
-const EMAILS_KEY = 'ehudBenEmails6';
+const EMAILS_KEY = 'ehudBenEmails7';
 
 let gEmails = null;
 
@@ -51,20 +51,14 @@ export function getEmailById(id) {
 }
 
 export function deleteEmail(emailToDelete) {
-  if (emailToDelete.hasOwnProperty('isStarred')) {
-    const emailIdx = gEmails.incomes.findIndex(
-      email => email.id === emailToDelete.id
-    );
-    gEmails.incomes.splice(emailIdx, 1);
-  } else {
-    const emailIdx = gEmails.sent.findIndex(
-      email => email.id === emailToDelete.id
-    );
-    gEmails.sent.splice(emailIdx, 1);
+  for (let key in gEmails) {
+    let emailIdx = gEmails[key].findIndex(email => email.id === emailToDelete.id);
+    if (emailIdx !== -1) {
+      gEmails[key].splice(emailIdx, 1);
+    }
   }
-
+  console.log('HERR');
   saveEmails();
-
   return Promise.resolve();
 }
 
