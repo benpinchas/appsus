@@ -55,10 +55,10 @@ let starterEmails = {
   incomes: [
     {
       id: Math.random() + '',
-      subject: 'First email',
-      body: 'Bla bla bla',
+      subject: 'First email ehud',
+      body: getLorem(),
       isRead: false,
-      sentAt: Date.now() + 100000,
+      sentAt: Date.now(),
       contact: {
         name: 'ehud',
         email: 'ehud@gmail.com'
@@ -68,7 +68,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: 'First email',
-      body: 'Bla bla bla',
+      body: getLorem(),
       isRead: false,
       sentAt: Date.now() - 300000,
       contact: {
@@ -80,7 +80,7 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: 'First email',
-      body: 'Bla bla bla',
+      body: getLorem(),
       isRead: false,
       sentAt: Date.now() - 300000,
       contact: {
@@ -91,10 +91,10 @@ let starterEmails = {
     },
     {
       id: Math.random() + '',
-      subject: 'First email',
+      subject: getLorem(),
       body: 'Bla bla bla',
       isRead: false,
-      sentAt: Date.now() - 300000,
+      sentAt: Date.now() - 33000,
       contact: {
         name: 'ehud',
         email: 'ehud@gmail.com'
@@ -104,9 +104,9 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: 'First email',
-      body: 'Bla bla bla',
+      body: getLorem(),
       isRead: false,
-      sentAt: Date.now() - 300000,
+      sentAt: Date.now() - 34000,
       contact: {
         name: 'ehud',
         email: 'ehud@gmail.com'
@@ -116,9 +116,9 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: 'First email',
-      body: 'Bla bla bla',
+      body: getLorem(),
       isRead: false,
-      sentAt: Date.now() - 300000,
+      sentAt: Date.now() - 30500,
       contact: {
         name: 'ehud',
         email: 'ehud@gmail.com'
@@ -163,7 +163,7 @@ let starterEmails = {
     },
     {
       id: Math.random() + '',
-      subject: '2 email',
+      subject: 'No replays yet',
       body: 'Bla bla bla',
       isRead: false,
       sentAt: Date.now() - 10000,
@@ -190,7 +190,7 @@ let starterEmails = {
       subject: 'First email',
       body: 'Bla bla bla',
       isRead: false,
-      sentAt: Date.now() - 300000,
+      sentAt: Date.now() - 30220000,
       contact: {
         name: 'ehud',
         email: 'ehud@gmail.com'
@@ -202,7 +202,7 @@ let starterEmails = {
       subject: '2 email',
       body: 'Bla bla bla',
       isRead: false,
-      sentAt: Date.now() - 10000,
+      sentAt: Date.now() - 1001100,
       contact: {
         name: 'ben',
         email: 'ben@gmail.com'
