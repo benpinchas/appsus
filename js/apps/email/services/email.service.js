@@ -1,41 +1,37 @@
 'use strict';
 
-import { storageService } from '../../../services/storage-service.js'
-import { getLorem } from '../../../services/util-service.js'
-
+import { storageService } from '../../../services/storage-service.js';
+import { getLorem } from '../../../services/util-service.js';
 
 export default {
   query
 };
-const EMAILS_KEY = 'ehudBenEmails6'
+const EMAILS_KEY = 'ehudBenEmails6';
 
 let gEmails = null;
 
 function query() {
-  return storageService.load(EMAILS_KEY)
-    .then(emails => {
-      if (emails) {
-        gEmails = emails
-        return gEmails
-      } else {
-        gEmails = starterEmails
-        return storageService.store(EMAILS_KEY, gEmails)
-          .then(() => {
-            return gEmails
-          })
-      }
-    })
+  return storageService.load(EMAILS_KEY).then(emails => {
+    if (emails) {
+      gEmails = emails;
+      return gEmails;
+    } else {
+      gEmails = starterEmails;
+      return storageService.store(EMAILS_KEY, gEmails).then(() => {
+        return gEmails;
+      });
+    }
+  });
 }
 
 export function saveEmails() {
-  return storageService.store(EMAILS_KEY, gEmails)
+  return storageService.store(EMAILS_KEY, gEmails);
 }
 
-
 export function sendEmail(email) {
-  gEmails.incomes.unshift(email)
-  gEmails.sent.unshift(email)
-  saveEmails()
+  gEmails.incomes.unshift(email);
+  gEmails.sent.unshift(email);
+  saveEmails();
 }
 
 export function getEmailById(id) {
@@ -44,18 +40,33 @@ export function getEmailById(id) {
       console.log('WILL NEVER HAPPANED');
       return query().then(() => {
         console.log(gEmails);
-      })
+      });
     } else {
       for (let key in gEmails) {
-        let email = gEmails[key].find(email => email.id === id)
-        if (email) resolve(email)
+        let email = gEmails[key].find(email => email.id === id);
+        if (email) resolve(email);
       }
     }
-    
-  })
-
+  });
 }
 
+export function deleteEmail(emailToDelete) {
+  if (emailToDelete.hasOwnProperty('isStarred')) {
+    const emailIdx = gEmails.incomes.findIndex(
+      email => email.id === emailToDelete.id
+    );
+    gEmails.incomes.splice(emailIdx, 1);
+  } else {
+    const emailIdx = gEmails.sent.findIndex(
+      email => email.id === emailToDelete.id
+    );
+    gEmails.sent.splice(emailIdx, 1);
+  }
+
+  saveEmails();
+
+  return Promise.resolve();
+}
 
 let starterEmails = {
   incomes: [
@@ -67,14 +78,15 @@ let starterEmails = {
       sentAt: Date.now(),
       contact: {
         name: 'ehud',
-        email: 'ehud@gmail.com',
+        email: 'ehud@gmail.com'
       },
       isStarred: false,
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-        {txt:'Seconed replay good to see', time:Date.now()}
+      replays: [
+        { txt: 'Fisrt replay here', time: Date.now() - 10000 },
+        { txt: 'Seconed replay good to see', time: Date.now() }
       ]
-    }, {
+    },
+    {
       id: Math.random() + '',
       subject: 'First email',
       body: getLorem(),
@@ -82,14 +94,15 @@ let starterEmails = {
       sentAt: Date.now() - 300000,
       contact: {
         name: 'ehud',
-        email: 'ehud@gmail.com',
+        email: 'ehud@gmail.com'
       },
       isStarred: false,
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-        {txt:'Seconed replay good to see', time:Date.now()}
+      replays: [
+        { txt: 'Fisrt replay here', time: Date.now() - 10000 },
+        { txt: 'Seconed replay good to see', time: Date.now() }
       ]
-    }, {
+    },
+    {
       id: Math.random() + '',
       subject: 'First email',
       body: getLorem(),
@@ -97,14 +110,15 @@ let starterEmails = {
       sentAt: Date.now() - 300000,
       contact: {
         name: 'ehud',
-        email: 'ehud@gmail.com',
+        email: 'ehud@gmail.com'
       },
       isStarred: false,
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-        {txt:'Seconed replay good to see', time:Date.now()}
+      replays: [
+        { txt: 'Fisrt replay here', time: Date.now() - 10000 },
+        { txt: 'Seconed replay good to see', time: Date.now() }
       ]
-    }, {
+    },
+    {
       id: Math.random() + '',
       subject: 'Nice Day',
       body: getLorem(),
@@ -112,14 +126,15 @@ let starterEmails = {
       sentAt: Date.now() - 33000,
       contact: {
         name: 'ehud',
-        email: 'ehud@gmail.com',
+        email: 'ehud@gmail.com'
       },
       isStarred: false,
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-        {txt:'Seconed replay good to see', time:Date.now()}
+      replays: [
+        { txt: 'Fisrt replay here', time: Date.now() - 10000 },
+        { txt: 'Seconed replay good to see', time: Date.now() }
       ]
-    }, {
+    },
+    {
       id: Math.random() + '',
       subject: 'First email',
       body: getLorem(),
@@ -127,12 +142,12 @@ let starterEmails = {
       sentAt: Date.now() - 34000,
       contact: {
         name: 'ehud',
-        email: 'ehud@gmail.com',
+        email: 'ehud@gmail.com'
       },
       isStarred: false,
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-        {txt:'Seconed replay good to see', time:Date.now()}
+      replays: [
+        { txt: 'Fisrt replay here', time: Date.now() - 10000 },
+        { txt: 'Seconed replay good to see', time: Date.now() }
       ]
     },
     {
@@ -143,12 +158,12 @@ let starterEmails = {
       sentAt: Date.now() - 30500,
       contact: {
         name: 'ehud',
-        email: 'ehud@gmail.com',
+        email: 'ehud@gmail.com'
       },
       isStarred: false,
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-        {txt:'Seconed replay good to see', time:Date.now()}
+      replays: [
+        { txt: 'Fisrt replay here', time: Date.now() - 10000 },
+        { txt: 'Seconed replay good to see', time: Date.now() }
       ]
     },
     {
@@ -162,9 +177,9 @@ let starterEmails = {
         email: 'ben@gmail.com'
       },
       isStarred: false,
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-        {txt:'Seconed replay good to see', time:Date.now()}
+      replays: [
+        { txt: 'Fisrt replay here', time: Date.now() - 10000 },
+        { txt: 'Seconed replay good to see', time: Date.now() }
       ]
     },
     {
@@ -178,9 +193,9 @@ let starterEmails = {
         email: 'tal@gmail.com'
       },
       isStarred: true,
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-        {txt:'Seconed replay good to see', time:Date.now()}
+      replays: [
+        { txt: 'Fisrt replay here', time: Date.now() - 10000 },
+        { txt: 'Seconed replay good to see', time: Date.now() }
       ]
     },
     {
@@ -191,12 +206,12 @@ let starterEmails = {
       sentAt: Date.now() - 300000,
       contact: {
         name: 'ehud',
-        email: 'ehud@gmail.com',
+        email: 'ehud@gmail.com'
       },
       isStarred: false,
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-        {txt:'Seconed replay good to see', time:Date.now()}
+      replays: [
+        { txt: 'Fisrt replay here', time: Date.now() - 10000 },
+        { txt: 'Seconed replay good to see', time: Date.now() }
       ]
     },
     {
@@ -210,9 +225,7 @@ let starterEmails = {
         email: 'ben@gmail.com'
       },
       isStarred: false,
-      replays:[
-        
-      ]
+      replays: []
     },
     {
       id: Math.random() + '',
@@ -225,9 +238,7 @@ let starterEmails = {
         email: 'tal@gmail.com'
       },
       isStarred: true,
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-      ]
+      replays: [{ txt: 'Fisrt replay here', time: Date.now() - 10000 }]
     },
     {
       id: Math.random() + '',
@@ -237,12 +248,10 @@ let starterEmails = {
       sentAt: Date.now() - 30220000,
       contact: {
         name: 'ehud',
-        email: 'ehud@gmail.com',
+        email: 'ehud@gmail.com'
       },
       isStarred: false,
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-      ]
+      replays: [{ txt: 'Fisrt replay here', time: Date.now() - 10000 }]
     },
     {
       id: Math.random() + '',
@@ -255,9 +264,7 @@ let starterEmails = {
         email: 'ben@gmail.com'
       },
       isStarred: false,
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-      ]
+      replays: [{ txt: 'Fisrt replay here', time: Date.now() - 10000 }]
     },
     {
       id: Math.random() + '',
@@ -270,9 +277,7 @@ let starterEmails = {
         email: 'tal@gmail.com'
       },
       isStarred: true,
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-      ]
+      replays: [{ txt: 'Fisrt replay here', time: Date.now() - 10000 }]
     }
   ],
 
@@ -284,11 +289,9 @@ let starterEmails = {
       sentAt: Date.now(),
       contact: {
         name: 'bobi',
-        email: 'bobi@gmail.com',
+        email: 'bobi@gmail.com'
       },
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-      ]
+      replays: [{ txt: 'Fisrt replay here', time: Date.now() - 10000 }]
     },
     {
       id: Math.random() + '',
@@ -297,11 +300,9 @@ let starterEmails = {
       sentAt: Date.now(),
       contact: {
         name: 'Momo',
-        email: 'bobi@gmail.com',
+        email: 'bobi@gmail.com'
       },
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-      ]
+      replays: [{ txt: 'Fisrt replay here', time: Date.now() - 10000 }]
     },
     {
       id: Math.random() + '',
@@ -310,11 +311,9 @@ let starterEmails = {
       sentAt: Date.now(),
       contact: {
         name: 'Bob',
-        email: 'bobi@gmail.com',
+        email: 'bobi@gmail.com'
       },
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-      ]
+      replays: [{ txt: 'Fisrt replay here', time: Date.now() - 10000 }]
     },
     {
       id: Math.random() + '',
@@ -323,11 +322,9 @@ let starterEmails = {
       sentAt: Date.now(),
       contact: {
         name: 'Nami',
-        email: 'bobi@gmail.com',
+        email: 'bobi@gmail.com'
       },
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-      ]
+      replays: [{ txt: 'Fisrt replay here', time: Date.now() - 10000 }]
     },
     {
       id: Math.random() + '',
@@ -336,11 +333,9 @@ let starterEmails = {
       sentAt: Date.now(),
       contact: {
         name: 'Nami',
-        email: 'bobi@gmail.com',
+        email: 'bobi@gmail.com'
       },
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-      ]
+      replays: [{ txt: 'Fisrt replay here', time: Date.now() - 10000 }]
     },
     {
       id: Math.random() + '',
@@ -349,17 +344,9 @@ let starterEmails = {
       sentAt: Date.now(),
       contact: {
         name: 'Nami',
-        email: 'bobi@gmail.com',
+        email: 'bobi@gmail.com'
       },
-      replays:[
-        {txt:'Fisrt replay here', time:Date.now()-10000},
-      ]
-    },
+      replays: [{ txt: 'Fisrt replay here', time: Date.now() - 10000 }]
+    }
   ]
-
-}
-
-
-
-
-
+};

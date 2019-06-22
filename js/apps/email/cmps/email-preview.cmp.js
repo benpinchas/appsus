@@ -1,7 +1,6 @@
 'use strict';
 
-import {saveEmails} from '../services/email.service.js'
-
+import { saveEmails, deleteEmail } from '../services/email.service.js';
 
 export default {
   name: 'emailPreview',
@@ -28,7 +27,7 @@ export default {
               </div>
               <div class="time">
                 {{fDate}}
-                <i class="fas fa-trash" style="margin-left:17px; color:#b7b7b7" @click="deleteEmail"></i>
+                <i class="fas fa-trash" style="margin-left:17px; color:#b7b7b7" @click.stop="deleteThisEmail"></i>
               </div>
         </div>
     `,
@@ -36,47 +35,47 @@ export default {
   computed: {
     fBody() {
       if (this.email.body.length > 14) {
-        return this.email.body.slice(0,14)+'..'
+        return this.email.body.slice(0, 14) + '..';
       } else {
-        return this.email.body
+        return this.email.body;
       }
     },
     fSubject() {
       if (this.email.subject.length > 14) {
-        return this.email.subject.slice(0,14)+'..'
+        return this.email.subject.slice(0, 14) + '..';
       } else {
-        return this.email.subject
+        return this.email.subject;
       }
     },
     fDate() {
-      let date = new Date(this.email.sentAt)
-      new Date().toLocaleDateString()
-      return date.toString().slice(16, 21) //+ '  ' + date.toLocaleDateString()
+      let date = new Date(this.email.sentAt);
+      new Date().toLocaleDateString();
+      return date.toString().slice(16, 21); //+ '  ' + date.toLocaleDateString()
     },
     isIncomeMail() {
-      return this.$route.params.theFilter !== "sent";
+      return this.$route.params.theFilter !== 'sent';
     }
   },
   methods: {
-    deleteEmail() {
-      console.log('DElete');
+    deleteThisEmail() {
+      deleteEmail(this.email).then(() => {
+        console.log('deleted');
+      });
     },
     toggleStar() {
-      this.email.isStarred = !this.email.isStarred
-      saveEmails()
+      this.email.isStarred = !this.email.isStarred;
+      saveEmails();
     },
     toggleRead() {
-      this.email.isRead = !this.email.isRead
-      saveEmails()
+      this.email.isRead = !this.email.isRead;
+      saveEmails();
     },
     readEmail() {
-      console.log(this.$route.fullPath)
-      this.$router.push(`${this.$route.fullPath}/read/${this.email.id}`)
+      console.log(this.$route.fullPath);
+      this.$router.push(`${this.$route.fullPath}/read/${this.email.id}`);
     }
   }
-
 };
-
 
 /*
  computed: {
