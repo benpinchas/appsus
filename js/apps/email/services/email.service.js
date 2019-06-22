@@ -1,40 +1,55 @@
 'use strict';
 
-import {storageService} from '../../../services/storage-service.js'
+import { storageService } from '../../../services/storage-service.js';
 
 export default {
   query
 };
-const EMAILS_KEY = 'ehudBenEmails'
+const EMAILS_KEY = 'ehudBenEmails';
 
 let gEmails = null;
 
 function query() {
-  return storageService.load(EMAILS_KEY)
-    .then(emails => {
-      if (emails)  {
-        gEmails = emails
-        return gEmails
-      } else {
-        gEmails = starterEmails
-        return storageService.store(EMAILS_KEY ,gEmails)
-            .then(() => {
-              return gEmails
-            })
-      }
-    })
+  return storageService.load(EMAILS_KEY).then(emails => {
+    if (emails) {
+      gEmails = emails;
+      return gEmails;
+    } else {
+      gEmails = starterEmails;
+      return storageService.store(EMAILS_KEY, gEmails).then(() => {
+        return gEmails;
+      });
+    }
+  });
 }
 
 export function saveEmails() {
-  return storageService.store(EMAILS_KEY, gEmails)
+  return storageService.store(EMAILS_KEY, gEmails);
 }
 
 export function sendEmail(email) {
-  gEmails.incomes.unshift(email)
-  gEmails.sent.unshift(email)
-  saveEmails()
+  gEmails.incomes.unshift(email);
+  gEmails.sent.unshift(email);
+  saveEmails();
 }
 
+export function deleteEmail(emailToDelete) {
+  if (emailToDelete.hasOwnProperty('isStarred')) {
+    const emailIdx = gEmails.incomes.findIndex(
+      email => email.id === emailToDelete.id
+    );
+    gEmails.incomes.splice(emailIdx, 1);
+  } else {
+    const emailIdx = gEmails.sent.findIndex(
+      email => email.id === emailToDelete.id
+    );
+    gEmails.sent.splice(emailIdx, 1);
+  }
+
+  saveEmails();
+
+  return Promise.resolve();
+}
 
 let starterEmails = {
   incomes: [
@@ -46,53 +61,9 @@ let starterEmails = {
       sentAt: Date.now() + 100000,
       contact: {
         name: 'ehud',
-        email: 'ehud@gmail.com',
+        email: 'ehud@gmail.com'
       },
-      isStarred: false,
-    },{
-      id: Math.random() + '',
-      subject: 'First email',
-      body: 'Bla bla bla',
-      isRead: false,
-      sentAt: Date.now() - 300000,
-      contact: {
-        name: 'ehud',
-        email: 'ehud@gmail.com',
-      },
-      isStarred: false,
-    },{
-      id: Math.random() + '',
-      subject: 'First email',
-      body: 'Bla bla bla',
-      isRead: false,
-      sentAt: Date.now() - 300000,
-      contact: {
-        name: 'ehud',
-        email: 'ehud@gmail.com',
-      },
-      isStarred: false,
-    },{
-      id: Math.random() + '',
-      subject: 'First email',
-      body: 'Bla bla bla',
-      isRead: false,
-      sentAt: Date.now() - 300000,
-      contact: {
-        name: 'ehud',
-        email: 'ehud@gmail.com',
-      },
-      isStarred: false,
-    },{
-      id: Math.random() + '',
-      subject: 'First email',
-      body: 'Bla bla bla',
-      isRead: false,
-      sentAt: Date.now() - 300000,
-      contact: {
-        name: 'ehud',
-        email: 'ehud@gmail.com',
-      },
-      isStarred: false,
+      isStarred: false
     },
     {
       id: Math.random() + '',
@@ -102,9 +73,57 @@ let starterEmails = {
       sentAt: Date.now() - 300000,
       contact: {
         name: 'ehud',
-        email: 'ehud@gmail.com',
+        email: 'ehud@gmail.com'
       },
-      isStarred: false,
+      isStarred: false
+    },
+    {
+      id: Math.random() + '',
+      subject: 'First email',
+      body: 'Bla bla bla',
+      isRead: false,
+      sentAt: Date.now() - 300000,
+      contact: {
+        name: 'ehud',
+        email: 'ehud@gmail.com'
+      },
+      isStarred: false
+    },
+    {
+      id: Math.random() + '',
+      subject: 'First email',
+      body: 'Bla bla bla',
+      isRead: false,
+      sentAt: Date.now() - 300000,
+      contact: {
+        name: 'ehud',
+        email: 'ehud@gmail.com'
+      },
+      isStarred: false
+    },
+    {
+      id: Math.random() + '',
+      subject: 'First email',
+      body: 'Bla bla bla',
+      isRead: false,
+      sentAt: Date.now() - 300000,
+      contact: {
+        name: 'ehud',
+        email: 'ehud@gmail.com'
+      },
+      isStarred: false
+    },
+    {
+      id: Math.random() + '',
+      subject: 'First email',
+      body: 'Bla bla bla',
+      isRead: false,
+      sentAt: Date.now() - 300000,
+      contact: {
+        name: 'ehud',
+        email: 'ehud@gmail.com'
+      },
+      isStarred: false
     },
     {
       id: Math.random() + '',
@@ -116,7 +135,7 @@ let starterEmails = {
         name: 'ben',
         email: 'ben@gmail.com'
       },
-      isStarred: false,
+      isStarred: false
     },
     {
       id: Math.random() + '',
@@ -128,7 +147,7 @@ let starterEmails = {
         name: 'tal',
         email: 'tal@gmail.com'
       },
-      isStarred: true,
+      isStarred: true
     },
     {
       id: Math.random() + '',
@@ -138,9 +157,9 @@ let starterEmails = {
       sentAt: Date.now() - 300000,
       contact: {
         name: 'ehud',
-        email: 'ehud@gmail.com',
+        email: 'ehud@gmail.com'
       },
-      isStarred: false,
+      isStarred: false
     },
     {
       id: Math.random() + '',
@@ -152,7 +171,7 @@ let starterEmails = {
         name: 'ben',
         email: 'ben@gmail.com'
       },
-      isStarred: false,
+      isStarred: false
     },
     {
       id: Math.random() + '',
@@ -164,7 +183,7 @@ let starterEmails = {
         name: 'tal',
         email: 'tal@gmail.com'
       },
-      isStarred: true,
+      isStarred: true
     },
     {
       id: Math.random() + '',
@@ -174,9 +193,9 @@ let starterEmails = {
       sentAt: Date.now() - 300000,
       contact: {
         name: 'ehud',
-        email: 'ehud@gmail.com',
+        email: 'ehud@gmail.com'
       },
-      isStarred: false,
+      isStarred: false
     },
     {
       id: Math.random() + '',
@@ -188,7 +207,7 @@ let starterEmails = {
         name: 'ben',
         email: 'ben@gmail.com'
       },
-      isStarred: false,
+      isStarred: false
     },
     {
       id: Math.random() + '',
@@ -200,7 +219,7 @@ let starterEmails = {
         name: 'tal',
         email: 'tal@gmail.com'
       },
-      isStarred: true,
+      isStarred: true
     }
   ],
 
@@ -212,8 +231,8 @@ let starterEmails = {
       sentAt: Date.now(),
       contact: {
         name: 'bobi',
-        email: 'bobi@gmail.com',
-      },
+        email: 'bobi@gmail.com'
+      }
     },
     {
       id: Math.random() + '',
@@ -222,8 +241,8 @@ let starterEmails = {
       sentAt: Date.now(),
       contact: {
         name: 'Momo',
-        email: 'bobi@gmail.com',
-      },
+        email: 'bobi@gmail.com'
+      }
     },
     {
       id: Math.random() + '',
@@ -232,8 +251,8 @@ let starterEmails = {
       sentAt: Date.now(),
       contact: {
         name: 'Bob',
-        email: 'bobi@gmail.com',
-      },
+        email: 'bobi@gmail.com'
+      }
     },
     {
       id: Math.random() + '',
@@ -242,8 +261,8 @@ let starterEmails = {
       sentAt: Date.now(),
       contact: {
         name: 'Nami',
-        email: 'bobi@gmail.com',
-      },
+        email: 'bobi@gmail.com'
+      }
     },
     {
       id: Math.random() + '',
@@ -252,8 +271,8 @@ let starterEmails = {
       sentAt: Date.now(),
       contact: {
         name: 'Nami',
-        email: 'bobi@gmail.com',
-      },
+        email: 'bobi@gmail.com'
+      }
     },
     {
       id: Math.random() + '',
@@ -262,11 +281,8 @@ let starterEmails = {
       sentAt: Date.now(),
       contact: {
         name: 'Nami',
-        email: 'bobi@gmail.com',
-      },
-    },
+        email: 'bobi@gmail.com'
+      }
+    }
   ]
-
-}
-
-
+};
