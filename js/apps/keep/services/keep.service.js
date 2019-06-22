@@ -11,6 +11,12 @@ const NOTES_KEY = 'ehudBenNotes7';
 
 let gNotes = null;
 
+
+export function saveNotes() {
+    storageService.store(NOTES_KEY, gNotes)
+}
+
+
 function query() {
   return storageService.load(NOTES_KEY).then(notes => {
     if (notes) {
@@ -43,7 +49,7 @@ let starterNotes = [
   {
     id: Math.random() + '',
     title: 'Third note',
-    body: getLorem(),
+    body: getLorem()+getLorem(),
     isPinned: false,
     createdAt: Date.now()
   }
