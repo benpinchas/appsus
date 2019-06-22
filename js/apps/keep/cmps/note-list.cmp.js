@@ -1,17 +1,16 @@
 'use strict';
 
-// import emailPreview from './email-preview.cmp.js';
+import notePreview from './note-preview.cmp.js';
 
 export default {
   name: 'noteList',
   template: `
         <section class="note-list">
-            note
-            <!-- <email-preview v-for="email in emails" :email="email" :key="email.id"></email-preview> -->
+            <note-preview v-for="note in notes" :note="note" :key=" note.id"></note-preview>
         </section>
     `,
   props: ['notes'],
   components: {
-    // emailPreview
+    notePreview
   }
 };

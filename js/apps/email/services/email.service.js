@@ -52,7 +52,9 @@ export function getEmailById(id) {
 
 export function deleteEmail(emailToDelete) {
   for (let key in gEmails) {
-    let emailIdx = gEmails[key].findIndex(email => email.id === emailToDelete.id);
+    let emailIdx = gEmails[key].findIndex(
+      email => email.id === emailToDelete.id
+    );
     if (emailIdx !== -1) {
       gEmails[key].splice(emailIdx, 1);
     }
