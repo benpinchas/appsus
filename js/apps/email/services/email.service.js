@@ -1,26 +1,28 @@
 'use strict';
 
-import {storageService} from '../../../services/storage-service.js'
+import { storageService } from '../../../services/storage-service.js'
+import { getLorem } from '../../../services/util-service.js'
+
 
 export default {
   query
 };
-const EMAILS_KEY = 'ehudBenEmails'
+const EMAILS_KEY = 'ehudBenEmails2'
 
 let gEmails = null;
 
 function query() {
   return storageService.load(EMAILS_KEY)
     .then(emails => {
-      if (emails)  {
+      if (emails) {
         gEmails = emails
         return gEmails
       } else {
         gEmails = starterEmails
-        return storageService.store(EMAILS_KEY ,gEmails)
-            .then(() => {
-              return gEmails
-            })
+        return storageService.store(EMAILS_KEY, gEmails)
+          .then(() => {
+            return gEmails
+          })
       }
     })
 }
@@ -29,10 +31,29 @@ export function saveEmails() {
   return storageService.store(EMAILS_KEY, gEmails)
 }
 
+
 export function sendEmail(email) {
   gEmails.incomes.unshift(email)
   gEmails.sent.unshift(email)
   saveEmails()
+}
+
+export function getEmailById(id) {
+  return new Promise((resolve, reject) => {
+    if (!gEmails) {
+      console.log('WILL NEVER HAPPANED');
+      return query().then(() => {
+        console.log(gEmails);
+      })
+    } else {
+      for (let key in gEmails) {
+        let email = gEmails[key].find(email => email.id === id)
+        resolve(email)
+      }
+    }
+    
+  })
+
 }
 
 
@@ -40,19 +61,23 @@ let starterEmails = {
   incomes: [
     {
       id: Math.random() + '',
-      subject: 'First email',
-      body: 'Bla bla bla',
+      subject: 'First email ehud',
+      body: getLorem(),
       isRead: false,
-      sentAt: Date.now() + 100000,
+      sentAt: Date.now(),
       contact: {
         name: 'ehud',
         email: 'ehud@gmail.com',
       },
       isStarred: false,
-    },{
+      replays:[
+        {txt:'Fisrt replay here', time:Date.now()-10000},
+        {txt:'Seconed replay good to see', time:Date.now()}
+      ]
+    }, {
       id: Math.random() + '',
       subject: 'First email',
-      body: 'Bla bla bla',
+      body: getLorem(),
       isRead: false,
       sentAt: Date.now() - 300000,
       contact: {
@@ -60,10 +85,10 @@ let starterEmails = {
         email: 'ehud@gmail.com',
       },
       isStarred: false,
-    },{
+    }, {
       id: Math.random() + '',
       subject: 'First email',
-      body: 'Bla bla bla',
+      body: getLorem(),
       isRead: false,
       sentAt: Date.now() - 300000,
       contact: {
@@ -71,23 +96,23 @@ let starterEmails = {
         email: 'ehud@gmail.com',
       },
       isStarred: false,
-    },{
+    }, {
       id: Math.random() + '',
-      subject: 'First email',
+      subject: getLorem(),
       body: 'Bla bla bla',
       isRead: false,
-      sentAt: Date.now() - 300000,
+      sentAt: Date.now() - 33000,
       contact: {
         name: 'ehud',
         email: 'ehud@gmail.com',
       },
       isStarred: false,
-    },{
+    }, {
       id: Math.random() + '',
       subject: 'First email',
-      body: 'Bla bla bla',
+      body: getLorem(),
       isRead: false,
-      sentAt: Date.now() - 300000,
+      sentAt: Date.now() - 34000,
       contact: {
         name: 'ehud',
         email: 'ehud@gmail.com',
@@ -97,9 +122,9 @@ let starterEmails = {
     {
       id: Math.random() + '',
       subject: 'First email',
-      body: 'Bla bla bla',
+      body: getLorem(),
       isRead: false,
-      sentAt: Date.now() - 300000,
+      sentAt: Date.now() - 30500,
       contact: {
         name: 'ehud',
         email: 'ehud@gmail.com',
@@ -171,7 +196,7 @@ let starterEmails = {
       subject: 'First email',
       body: 'Bla bla bla',
       isRead: false,
-      sentAt: Date.now() - 300000,
+      sentAt: Date.now() - 30220000,
       contact: {
         name: 'ehud',
         email: 'ehud@gmail.com',
@@ -183,7 +208,7 @@ let starterEmails = {
       subject: '2 email',
       body: 'Bla bla bla',
       isRead: false,
-      sentAt: Date.now() - 10000,
+      sentAt: Date.now() - 1001100,
       contact: {
         name: 'ben',
         email: 'ben@gmail.com'
@@ -268,5 +293,8 @@ let starterEmails = {
   ]
 
 }
+
+
+
 
 

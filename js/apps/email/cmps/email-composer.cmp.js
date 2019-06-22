@@ -53,7 +53,7 @@ export default {
                 sentAt: Date.now(),
                 contact: {
                   name: 'Me',
-                  email: this.$refs.emailInput.value,
+                  email: 'me@gmail.com',
                 },
                 isStarred: false,
               }

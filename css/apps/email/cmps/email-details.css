@@ -14,7 +14,8 @@
     margin: 0 auto;
     border-radius: 2px;
     padding: 30px;
-    min-height: calc(100vh - 150px);
+    /* min-height: calc(100vh - 150px); */
+    box-shadow: 0 0 1px 0px #595757;
 }
 
 .email-details .body {
@@ -63,6 +64,14 @@
     border: none;
     font-size: 16px;
 }
+
+.replay-cmp {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    color: #262626;
+}
+
 
 @media(max-width:670px) {
     .email-details main {

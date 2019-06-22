@@ -2,6 +2,7 @@
 
 import {saveEmails} from '../services/email.service.js'
 
+
 export default {
   name: 'emailPreview',
   template: `
@@ -70,7 +71,7 @@ export default {
     },
     readEmail() {
       console.log(this.$route.fullPath)
-      this.$router.push(this.$route.fullPath+'/read/ada')
+      this.$router.push(`${this.$route.fullPath}/read/${this.email.id}`)
     }
   }
 
