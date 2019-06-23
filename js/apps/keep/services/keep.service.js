@@ -16,8 +16,8 @@ export function saveNotes() {
 }
 
 export function addNote(note) {
-  gNotes.unshift(note)
-  saveNotes()
+  gNotes.unshift(note);
+  saveNotes();
 }
 
 function query() {
@@ -55,7 +55,8 @@ let starterNotes = [
   },
   {
     id: Math.random() + '',
-    data: 'https://www.worldatlas.com/r/w728-h425-c728x425/upload/32/ed/dd/shutterstock-611361698.jpg',
+    data:
+      'https://www.worldatlas.com/r/w728-h425-c728x425/upload/32/ed/dd/shutterstock-611361698.jpg',
     isPinned: false,
     type: 'image', //image //todos //youtube //audio,
     color: '#ffe4e8',
@@ -69,4 +70,12 @@ let starterNotes = [
     color: '#e0e0ff',
     createdAt: Date.now()
   },
+  {
+    id: Math.random() + '',
+    data: getLorem(),
+    isPinned: false,
+    type: 'todos', //image //todos //youtube //audio,
+    color: '#e0e0ff',
+    createdAt: Date.now()
+  }
 ];

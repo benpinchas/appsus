@@ -2,8 +2,9 @@
 
 import { saveNotes, deleteNote } from '../services/keep.service.js';
 
-import textData from './note-data/text-data.cmp.js'
-import imageData from './note-data/image-data.cmp.js'
+import textData from './note-data/text-data.cmp.js';
+import imageData from './note-data/image-data.cmp.js';
+import todosData from './note-data/todos-data.cmp.js';
 
 export default {
   name: 'notePreview',
@@ -48,8 +49,8 @@ export default {
   data() {
     return {
       randomBoolean: Math.random() > 0.5,
-      isEditContext: false,
-    }
+      isEditContext: false
+    };
   },
   computed: {
     iconClass() {
@@ -57,10 +58,11 @@ export default {
         'fab fa-youtube': this.note.type === 'video',
         'fas fa-image': this.note.type === 'image',
         'fas fa-font': this.note.type === 'text',
-      }
+        'fas fa-list-ul': this.note.type === 'todos'
+      };
     },
     type() {
-      return this.note.type+'-data'
+      return this.note.type + '-data';
     },
     logoSrc() {
       return 'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg';
@@ -73,20 +75,20 @@ export default {
   },
   components: {
     textData,
-    imageData
+    imageData,
+    todosData
   },
   methods: {
     changeColor(color) {
       console.log(color);
-      this.note.color = color
-      saveNotes()
+      this.note.color = color;
+      saveNotes();
     },
     deleteThisNote() {
       deleteNote(this.note).then(() => {
         console.log('deleted');
       });
-    },
+    }
   },
-  mounted() {
-  }
+  mounted() {}
 };
