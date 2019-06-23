@@ -1,5 +1,5 @@
 'use strict';
-
+let del =8;
 import { storageService } from '../../../services/storage-service.js';
 import { getLorem } from '../../../services/util-service.js';
 
