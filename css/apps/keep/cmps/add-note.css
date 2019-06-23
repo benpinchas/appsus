@@ -31,17 +31,29 @@
     box-shadow: 0 0 3px white;
 }
 
-.note-kinds i{
+.add-note  .note-kinds i{
     cursor: pointer;
     font-size: 23px;
     margin-right: 12px;
     color: rgb(61, 61, 61);
 }
 
-.note-kinds i:hover {
-    color: black;
+
+/* icons fa */
+.note-kinds .fa-youtube:hover {
+   
 }
 
-.note-kinds i.fa-youtube:hover {
+.add-note .fa-font.selected {
+    color: blue;
+}
+.add-note .fa-youtube.selected {
     color: red;
 }
+.add-note .fa-image.selected {
+    color: #e88500;
+}
+.add-note .fa-list-ul.selected {
+    color: green;
+}
+

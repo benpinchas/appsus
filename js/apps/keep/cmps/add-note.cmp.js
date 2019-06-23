@@ -4,40 +4,33 @@ import { addNote } from '../services/keep.service.js'
 export default {
     template: `
         <section class="add-note">
-            <!-- <div class="note-kinds"> 
-                <i class="fas fa-font"></i>
-                <i class="fab fa-youtube"></i>
-                <i class="fas fa-image"></i>
-                <i class="fas fa-list-ul"></i>
-            <div> -->
-
-            <div class="note-preview">
+            <div class="note-preview" :style="{'background-color': note.color}">
+              
               <div class="top"> 
-                <div class="note-kinds"> 
-                    <i class="fas fa-font"></i>
-                    <i class="fab fa-youtube"></i>
-                    <i class="fas fa-image"></i>
-                    <i class="fas fa-list-ul"></i>
-                </div>
-                <span class="time">Preview</span>
+                    <div class="note-kinds"> 
+                        <i ref="text" class="fas fa-font" @click="changeNoteKind('text')"></i>
+                        <i ref="video" class="fab fa-youtube"  @click="changeNoteKind('video')"></i>
+                        <i ref="image" class="fas fa-image"  @click="changeNoteKind('image')"></i>
+                        <i ref="todo" class="fas fa-list-ul"  @click="changeNoteKind('todo')"></i>
+                    </div>
+                    <span class="time">Preview</span>
               </div>
+              
               <div class="main"> 
-
-
                   <div class="note-content"> 
                     <p contentEditable class="body edit-context" ref="context" autofocus @keyup="addContext"></p>
                   </div> 
-  
               </div>
+              
               <div class="edit-btns ">
                 <span class="left-container color-picker">
                   <i class="fas fa-palette"></i>
                   
                   <div style="text-align:center" class="dot-container">
-                    <span class="dot pink"></span>
-                    <span class="dot blue"></span>
-                    <span class="dot green"></span>
-                    <span class="dot gray picked"></span>
+                  <span class="dot pink" @click="changeColor('#ffe4e8')"></span>
+                    <span class="dot blue"  @click="changeColor('#e0e0ff')" ></span>
+                    <span class="dot green" @click="changeColor('#deffde')"></span>
+                    <span class="dot gray picked" @click="changeColor('whitesmoke')"></span>
                     </div>
                 </span>
                 
@@ -54,6 +47,7 @@ export default {
         return {
             randomBoolean: Math.random() > 0.5,
             isEditContext: false,
+            gIcon: null,
             note: {
                 id: Math.random() + '',
                 data: '',
@@ -75,6 +69,18 @@ export default {
         }
     },
     methods: {
+        changeColor(color) {
+            console.log(color);
+            this.note.color = color;
+          },
+        changeNoteKind(type){
+            if (this.gIcon) {
+                this.gIcon.classList.remove('selected')
+            }
+            this.gIcon = this.$refs[type]
+            this.gIcon.classList.add('selected')
+            this.note.type = type
+        },
         addContext() {
             this.note.data = this.$refs.context.textContent
         },
@@ -113,6 +119,7 @@ export default {
     },
     mounted() {
         this.$refs.context.focus()
+        this.changeNoteKind('text')
     }
 }
 
