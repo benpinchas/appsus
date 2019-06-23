@@ -27,19 +27,23 @@
   transition: .3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
+.note-content {
+    margin-bottom: 10px;
+}
 
-
-
-/* EDIT LISTEMER */
-.note-preview.edit-context .body{
+.note-content.edit-context {
   background-color: #ffffff;
   box-shadow: 0 0 6px rgba(0,0,0,0.5);
   transform: scale(1.1);
-}
-.note-preview.edit-context .edit-btns .fas.fa-edit {
-  color: #0084ff;
-}
+  outline: none;
+  border-radius: 9px;
+  padding: 11px;
+  transition: .3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 
+  background-color: #ffffff;
+  box-shadow: 0 0 6px rgba(201, 193, 193, 0.5);
+  transform: scale(1.1);
+}
 
 
 
@@ -89,7 +93,6 @@
 .note-preview .body {
   font-size: 15px;
   min-height: 150px;
-  margin-bottom: 30px;
 }
 
 .note-preview .edit-btns {
@@ -124,7 +127,3 @@
   color: red;
 }
 
-/* 
-color: #767676;
-font-size: 17px;
-margin-left: 10px; */
