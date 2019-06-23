@@ -1,25 +1,25 @@
 'use strict';
 
-import { saveEmails } from '../services/email.service.js'
-import { getEmailById } from '../services/email.service.js'
+import { saveEmails } from '../services/email.service.js';
+import { getEmailById } from '../services/email.service.js';
 
 let replayCmp = {
-    template: `<div class="replay-cmp">
+  template: `<div class="replay-cmp">
                     <p class="replay-txt"><span style="font-weight: 700;">Re: </span>{{replay.txt}} </p>
                     <p class="light"> {{fDate}}</p>
                 </div>`,
-    props: ['replay'],
-    computed: {
-        fDate() {
-            let date = new Date(this.replay.time)
-            return date.toString().slice(16, 21) //+ '  ' + date.toLocaleDateString()
-        },
+  props: ['replay'],
+  computed: {
+    fDate() {
+      let date = new Date(this.replay.time);
+      return date.toString().slice(16, 21); //+ '  ' + date.toLocaleDateString()
     }
-}
+  }
+};
 
 export default {
-    name: 'emailDetails',
-    template: `
+  name: 'emailDetails',
+  template: `
         <div class="email-details" v-if="email">
             <main>
                 <div class="email-info"> 
@@ -43,45 +43,44 @@ export default {
             </main>
         </div>
     `,
-    data() {
-        return {
-            email: null,
-        }
-    },
-    computed: {
-        fDate() {
-            let date = new Date(this.email.sentAt)
-            new Date().toLocaleDateString()
-            return date.toString().slice(16, 21) //+ '  ' + date.toLocaleDateString()
-        },
-    },
-    methods: {
-        addReplay() {
-            let replayTextarea = this.$refs.replayTextarea
-            if (!replayTextarea.value) return
-            let replay = {
-                txt: replayTextarea.value,
-                time: Date.now()
-            }
-            this.email.replays.push(replay)
-            saveEmails()
-            replayTextarea.value = ''
-            replayTextarea.focus()
-        }
-    },
-    created() {
-        console.log('Created');
-        console.log(getEmailById(this.$route.params.emailId));
-        getEmailById(this.$route.params.emailId)
-            .then(email => {
-                if (!email.isRead) {
-                    email.isRead = true;
-                }
-                this.email = email
-            })
-    },
-    components: {
-        replayCmp
+  data() {
+    return {
+      email: null
+    };
+  },
+  computed: {
+    fDate() {
+      let date = new Date(this.email.sentAt);
+      new Date().toLocaleDateString();
+      return date.toString().slice(16, 21); //+ '  ' + date.toLocaleDateString()
     }
-
+  },
+  methods: {
+    addReplay() {
+      let replayTextarea = this.$refs.replayTextarea;
+      if (!replayTextarea.value) return;
+      let replay = {
+        txt: replayTextarea.value,
+        time: Date.now()
+      };
+      this.email.replays.push(replay);
+      saveEmails();
+      replayTextarea.value = '';
+      replayTextarea.focus();
+    }
+  },
+  created() {
+    console.log('Created');
+    console.log(getEmailById(this.$route.params.emailId));
+    getEmailById(this.$route.params.emailId).then(email => {
+      if (!email.isRead) {
+        email.isRead = true;
+        saveEmails();
+      }
+      this.email = email;
+    });
+  },
+  components: {
+    replayCmp
+  }
 };
