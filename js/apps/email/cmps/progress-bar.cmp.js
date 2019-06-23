@@ -14,14 +14,14 @@ export default {
   // },
   computed: {
     readMailsPercent() {
-      var length = 0;
-      query().then(emails => {
-        length = emails.incomes.length;
-        console.log('inside then', length);
-        return length;
-      });
-      console.log('after then', length);
-      return length;
+      // var length = 0;
+      // query().then(emails => {
+      //   length = emails.incomes.length;
+      //   console.log('inside then', length);
+      //   return length;
+      // });
+      // console.log('after then', length);
+      // return length;
       // return readEmailPercentage().then(readEmailsPercent => {
       //   console.log('read mails percentage', readEmailsPercent);
       //   this.percent = readEmailsPercent;
