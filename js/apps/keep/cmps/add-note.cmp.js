@@ -11,7 +11,7 @@ export default {
                         <i ref="text" class="fas fa-font" @click="changeNoteKind('text')"></i>
                         <i ref="video" class="fab fa-youtube"  @click="changeNoteKind('video')"></i>
                         <i ref="image" class="fas fa-image"  @click="changeNoteKind('image')"></i>
-                        <i ref="todo" class="fas fa-list-ul"  @click="changeNoteKind('todo')"></i>
+                        <i ref="todos" class="fas fa-list-ul"  @click="changeNoteKind('todos')"></i>
                     </div>
                     <span class="time">Preview</span>
               </div>
@@ -85,6 +85,18 @@ export default {
             this.note.data = this.$refs.context.textContent
         },
         addNote() {
+            if (this.note.type === 'todos') {
+                let todosTxts = this.$refs.context.textContent.split(',')
+                todosTxts = todosTxts.filter(todoTxt => todoTxt)
+                let todos = todosTxts.map(todoTxt => {
+                        return {
+                            txt: todoTxt,
+                            isDone: false,
+                            id: Math.random()+''
+                        }   
+                })
+                this.note.data = todos;
+            }
             addNote(this.note);
             this.note = {
                 id: Math.random() + '',
@@ -94,6 +106,7 @@ export default {
                 color: 'whitesmoke',
                 createdAt: Date.now()
             }
+            this.changeNoteKind('text')
             this.$refs.context.textContent = ''
             this.$refs.context.focus()
         },

@@ -1,0 +1,11 @@
+.done {
+  text-decoration: line-through;
+}
+
+.todo-preview {
+  margin-bottom: 4px;
+  font-size: 21px;
+  padding: 3px;
+  /* border-radius: 3px; */
+  border-bottom: 1px solid #cacaca;
+}
