@@ -3,7 +3,15 @@
 export default {
   template: `
         <section class="email-filter">
-            <main>
+            <main v-if="isInEmailDetails">
+                <p>
+                  <i class="fas fa-chevron-left back-left-btn" @click="goBack"></i>
+                  <!-- <p> Go back</p> -->
+                </p>
+                
+            </main>
+
+            <main v-show="!isInEmailDetails">
                 <div class="filter-btns-container" v-show="isIncomeMail"> 
                     <button ref='all' @click="emitFilter('all')">All</button>
                     <button ref='read' @click="emitFilter('read')">Read</button>
@@ -36,6 +44,10 @@ export default {
   computed: {
     isIncomeMail() {
       return this.$route.params.theFilter !== 'sent';
+    },
+    isInEmailDetails() {
+      if (this.$route.params.emailId) return true
+      else return false;
     }
   },
   methods: {
@@ -51,10 +63,19 @@ export default {
     },
     setSortBy(ev) {
       this.$emit('setSortBy', ev.target.value)
+    },
+    goBack() {
+      console.log('goBack');
+      var searchTerm = '/read/';
+      var indexOfFirst = this.$route.path.indexOf(searchTerm)
+      let previousPath = this.$route.path.slice(0,indexOfFirst)
+      this.$router.push(previousPath)
     }
   },
   mounted() {
-    this.currBtn = this.$refs.all;
-    this.emitFilter(this.filterBy);
+    if (!this.isInEmailDetails) {
+      this.currBtn = this.$refs.all;
+      this.emitFilter(this.filterBy);
+    }
   }
 };

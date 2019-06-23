@@ -3,6 +3,14 @@
   border-bottom: 1px solid lightgrey;
 }
 
+
+.email-filter .back-left-btn {
+  color: #0084ff;
+  cursor: pointer;
+  font-size: 28px;
+  margin-left: 20px;
+}
+
 .email-filter .sent-msg {
   font-size: 26px;
   font-weight: 300;

@@ -74,7 +74,9 @@ export default {
         console.log(getEmailById(this.$route.params.emailId));
         getEmailById(this.$route.params.emailId)
             .then(email => {
-                console.log(email);
+                if (!email.isRead) {
+                    email.isRead = true;
+                }
                 this.email = email
             })
     },

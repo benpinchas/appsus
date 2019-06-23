@@ -19,7 +19,7 @@ export default {
                 </div>  -->
 
                   <div class="note-content"> 
-                      <p :contentEditable="isEditContext" class="body" ref="context">{{note.body}}</p>
+                      <p :contentEditable="isEditContext"  class="body" ref="context">{{note.body}}</p>
                   </div>
 
 
@@ -64,7 +64,7 @@ export default {
       if (this.isEditContext) {
         setTimeout(() => {
           this.$refs.context.focus()
-        },100)
+        },1000)
         
       } else {
         this.note.body = this.$refs.context.textContent

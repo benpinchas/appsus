@@ -24,13 +24,17 @@
   outline: none;
   border-radius: 9px;
   padding: 11px;
+  transition: .3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
+
+
 
 
 /* EDIT LISTEMER */
 .note-preview.edit-context .body{
-  background-color: #ececec;
+  background-color: #ffffff;
   box-shadow: 0 0 6px rgba(0,0,0,0.5);
+  transform: scale(1.1);
 }
 .note-preview.edit-context .edit-btns .fas.fa-edit {
   color: #0084ff;
