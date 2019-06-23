@@ -70,8 +70,12 @@
   align-items: center;
 }
 
-.note-preview .top img {
-  width: 27px;
+.note-preview .top i {
+  font-size: 25px;
+}
+
+.note-preview .top .fa-youtube {
+  color:red;
 }
 
 .note-preview .top .time {
@@ -125,5 +129,20 @@
 
 .fas.fa-trash:hover {
   color: red;
+}
+
+
+/* icons */
+.note-preview .fa-image {
+  color: #e88500;
+}
+
+
+.src-input {
+  width: 100%;
+  border-radius: 2px;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 0 1px #979797;
 }
 

@@ -3,18 +3,22 @@
 import { saveNotes, deleteNote } from '../services/keep.service.js';
 
 import textData from './note-data/text-data.cmp.js'
+import imageData from './note-data/image-data.cmp.js'
 
 export default {
   name: 'notePreview',
   template: `
         <div class="note-preview" v-if="note" :style="{'background-color': note.color}">
               <div class="top"> 
-                <img :src="logoSrc">
+                <i :class="iconClass"></i>
                 <span class="time"> {{fDate}} </span>
               </div>
               <div class="main"> 
 
-                  <text-data :data="note.data"></text-data>
+
+                  <component :is="type" :data="note.data"></component>
+                  <!-- <text-data :data="note.data"></text-data>
+                  <image-data :data="note.data"></image-data> -->
                 
               </div>
 
@@ -48,6 +52,16 @@ export default {
     }
   },
   computed: {
+    iconClass() {
+      return {
+        'fab fa-youtube': this.note.type === 'video',
+        'fas fa-image': this.note.type === 'image',
+        'fas fa-font': this.note.type === 'text',
+      }
+    },
+    type() {
+      return this.note.type+'-data'
+    },
     logoSrc() {
       return 'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg';
     },
@@ -59,6 +73,7 @@ export default {
   },
   components: {
     textData,
+    imageData
   },
   methods: {
     changeColor(color) {
@@ -73,6 +88,5 @@ export default {
     },
   },
   mounted() {
-    setInterval(() => console.log(this.note), 1000)
   }
 };

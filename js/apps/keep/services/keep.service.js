@@ -55,9 +55,9 @@ let starterNotes = [
   },
   {
     id: Math.random() + '',
-    data: getLorem(),
+    data: 'https://www.worldatlas.com/r/w728-h425-c728x425/upload/32/ed/dd/shutterstock-611361698.jpg',
     isPinned: false,
-    type: 'text', //image //todos //youtube //audio,
+    type: 'image', //image //todos //youtube //audio,
     color: '#ffe4e8',
     createdAt: Date.now()
   },
