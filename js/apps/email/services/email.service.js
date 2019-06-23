@@ -11,6 +11,7 @@ const EMAILS_KEY = 'ehudBenEmails8';
 let gEmails = null;
 
 export function query() {
+  console.log(test);
   // if (gEmails) return Promise.resolve(gEmails);
   return storageService.load(EMAILS_KEY).then(emails => {
     if (emails) {
