@@ -1,5 +1,5 @@
 'use strict';
-let del =8;
+
 import { storageService } from '../../../services/storage-service.js';
 import { getLorem } from '../../../services/util-service.js';
 
@@ -11,7 +11,6 @@ const EMAILS_KEY = 'ehudBenEmails10';
 let gEmails = null;
 
 export function query() {
-  console.log(test);
   // if (gEmails) return Promise.resolve(gEmails);
   return storageService.load(EMAILS_KEY).then(emails => {
     if (emails) {
