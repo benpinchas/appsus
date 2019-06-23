@@ -3,7 +3,12 @@
 let todo = {
   template: `
   <div>
-    {{todo}}
+  <span :class="{ done : todo.isDone }">
+  {{todo.txt}}
+  </span>
+      <!-- <div v-for="(value, name) in todo">
+      {{ name }}: {{ value }}
+    </div> -->
   </div>
   `,
   props: ['todo']
@@ -25,6 +30,9 @@ export default {
     return {
       isEditContext: false
     };
+  },
+  created() {
+    console.log(this.data);
   },
   methods: {
     editContext() {

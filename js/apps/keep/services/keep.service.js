@@ -72,7 +72,11 @@ let starterNotes = [
   },
   {
     id: Math.random() + '',
-    data: getLorem(),
+    data: [
+      { id: Math.random() + '', txt: 'Dator Rio', isDone: true },
+      { id: Math.random() + '', txt: 'Riof', isDone: false },
+      { id: Math.random() + '', txt: 'saver', isDone: true }
+    ],
     isPinned: false,
     type: 'todos', //image //todos //youtube //audio,
     color: '#e0e0ff',
