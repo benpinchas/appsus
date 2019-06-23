@@ -22,7 +22,22 @@
 
 .note-preview .body {
   outline: none;
+  border-radius: 9px;
+  padding: 11px;
 }
+
+
+/* EDIT LISTEMER */
+.note-preview.edit-context .body{
+  background-color: #ececec;
+  box-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+.note-preview.edit-context .edit-btns .fas.fa-edit {
+  color: #0084ff;
+}
+
+
+
 
 .note-preview {
   cursor: pointer;

@@ -5,7 +5,7 @@ import {saveNotes} from '../services/keep.service.js'
 export default {
   name: 'notePreview',
   template: `
-        <div class="note-preview" v-if="note">
+        <div class="note-preview" v-if="note" :class="{'edit-context': isEditContext}">
               <div class="top"> 
                 <img :src="logoSrc">
                 <span class="time"> {{fDate}} </span>
@@ -14,12 +14,12 @@ export default {
 
 
 
-                 <div class="note-content" v-if="randomBoolean"> 
+                 <!-- <div class="note-content" v-if="randomBoolean"> 
                     <iframe width="300" height="200" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-                </div> 
+                </div>  -->
 
-                  <div class="note-content" v-else> 
-                      <p contentEditable class="body" ref="context" @keyup="editContext">{{note.body}}</p>
+                  <div class="note-content"> 
+                      <p :contentEditable="isEditContext" class="body" ref="context">{{note.body}}</p>
                   </div>
 
 
@@ -29,7 +29,7 @@ export default {
               </div>
               <div class="edit-btns">
                 <span class="left-container"> 
-                  <i class="fas fa-edit" @click="editNote"></i>
+                  <i class="fas fa-edit" @click="editContext"></i>
                   <i class="fas fa-flag"></i>
                   <i class="fas fa-palette"></i>
                 </span>
@@ -44,6 +44,7 @@ export default {
   data() {
     return {
       randomBoolean: Math.random() > 0.5,
+      isEditContext: false,
     }
   },
   computed: {
@@ -57,24 +58,27 @@ export default {
     },
   },
   methods: {
-    editContext() {
+    editContext(ev) {
       console.log('editContext');
+      this.isEditContext = !this.isEditContext;
+      if (this.isEditContext) {
+        setTimeout(() => {
+          this.$refs.context.focus()
+        },100)
+        
+      } else {
+        this.note.body = this.$refs.context.textContent
+        saveNotes()
+      }
       // console.log(this.$refs.context.textContent);
-      this.note.body = this.$refs.context.textContent
-      saveNotes()
+      // this.note.body = this.$refs.context.textContent
+      // saveNotes()
     },
     deleteThisNote() {
       console.log('deleted');
       // deleteEmail(this.email).then(() => {
       //   console.log('deleted');
       // });
-    },
-    editNote() {
-      console.log('editNote');
-      this.editMode = !this.editMode;
-      if (this.editMode) {
-        // setTimeout(() => this.$refs.textarea.focus(), 100)
-      }      
     },
   },
   mounted() {
