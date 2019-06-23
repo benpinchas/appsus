@@ -9,7 +9,7 @@ import noteList from '../cmps/note-list.cmp.js';
 export default {
   name: 'MissKeep',
   template: `
-        <section class="miss-keep">
+        <section class="miss-keep scrolable">
             <add-note></add-note>
             <note-list :notes="notes"></note-list>
 

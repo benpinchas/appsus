@@ -2,36 +2,40 @@
 
 import { saveNotes, deleteNote } from '../services/keep.service.js';
 
+import textData from './note-data/text-data.cmp.js'
+import imageData from './note-data/image-data.cmp.js'
+
 export default {
   name: 'notePreview',
   template: `
-        <div class="note-preview" v-if="note" :class="{'edit-context': isEditContext}">
+        <div class="note-preview" v-if="note" :style="{'background-color': note.color}">
               <div class="top"> 
-                <img :src="logoSrc">
+                <i :class="iconClass"></i>
                 <span class="time"> {{fDate}} </span>
               </div>
               <div class="main"> 
 
 
-
-                 <!-- <div class="note-content" v-if="randomBoolean"> 
-                    <iframe width="300" height="200" src="https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG" frameborder="0" allow="autoplay; encrypted-media"></iframe>
-                </div>  -->
-
-                  <div class="note-content"> 
-                      <p :contentEditable="isEditContext"  class="body" ref="context">{{note.body}}</p>
-                  </div>
-
-
-                  
-                  
-  
+                  <component :is="type" :data="note.data"></component>
+                  <!-- <text-data :data="note.data"></text-data>
+                  <image-data :data="note.data"></image-data> -->
+                
               </div>
+
+
               <div class="edit-btns">
-                <span class="left-container"> 
-                  <i class="fas fa-edit" @click="editContext"></i>
+                <span class="left-container">
                   <i class="fas fa-flag"></i>
+                  <span class="color-picker">
                   <i class="fas fa-palette"></i>
+                  
+                  <div style="text-align:center" class="dot-container">
+                    <span class="dot pink" @click="changeColor('#ffe4e8')"></span>
+                    <span class="dot blue"  @click="changeColor('#e0e0ff')" ></span>
+                    <span class="dot green" @click="changeColor('#deffde')"></span>
+                    <span class="dot gray picked" @click="changeColor('whitesmoke')"></span>
+                    </div>
+                </span>
                 </span>
                 <span>
                     <i class="fas fa-trash" @click.stop="deleteThisNote"></i>
@@ -48,6 +52,16 @@ export default {
     }
   },
   computed: {
+    iconClass() {
+      return {
+        'fab fa-youtube': this.note.type === 'video',
+        'fas fa-image': this.note.type === 'image',
+        'fas fa-font': this.note.type === 'text',
+      }
+    },
+    type() {
+      return this.note.type+'-data'
+    },
     logoSrc() {
       return 'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg';
     },
@@ -57,19 +71,15 @@ export default {
       return date.toString().slice(16, 21); //+ '  ' + date.toLocaleDateString()
     }
   },
+  components: {
+    textData,
+    imageData
+  },
   methods: {
-    editContext(ev) {
-      console.log('editContext');
-      this.isEditContext = !this.isEditContext;
-      if (this.isEditContext) {
-        setTimeout(() => {
-          this.$refs.context.focus()
-        },1000)
-        
-      } else {
-        this.note.body = this.$refs.context.textContent
-        saveNotes()
-      }
+    changeColor(color) {
+      console.log(color);
+      this.note.color = color
+      saveNotes()
     },
     deleteThisNote() {
       deleteNote(this.note).then(() => {
@@ -78,6 +88,5 @@ export default {
     },
   },
   mounted() {
-    // setInterval(() => console.log(this.note.body), 1000)
   }
 };

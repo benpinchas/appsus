@@ -55,7 +55,7 @@ export default {
     isIncomeMail() {
       return this.$route.params.theFilter !== 'sent';
     }
-  },
+  }, 
   methods: {
     deleteThisEmail() {
       deleteEmail(this.email).then(() => {

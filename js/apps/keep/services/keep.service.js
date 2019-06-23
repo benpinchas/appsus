@@ -7,12 +7,17 @@ export default {
   query
 };
 
-const NOTES_KEY = 'ehudBenNotes7';
+const NOTES_KEY = 'ehudBenNotes11';
 
 let gNotes = null;
 
 export function saveNotes() {
   storageService.store(NOTES_KEY, gNotes);
+}
+
+export function addNote(note) {
+  gNotes.unshift(note)
+  saveNotes()
 }
 
 function query() {
@@ -42,23 +47,26 @@ export function deleteNote(noteToDelete) {
 let starterNotes = [
   {
     id: Math.random() + '',
-    title: 'First note',
-    body: getLorem(),
+    data: getLorem(),
     isPinned: false,
+    type: 'text', //image //todos //youtube //audio,
+    color: 'whitesmoke',
     createdAt: Date.now()
   },
   {
     id: Math.random() + '',
-    title: 'Second note',
-    body: getLorem(),
+    data: 'https://www.worldatlas.com/r/w728-h425-c728x425/upload/32/ed/dd/shutterstock-611361698.jpg',
     isPinned: false,
+    type: 'image', //image //todos //youtube //audio,
+    color: '#ffe4e8',
     createdAt: Date.now()
   },
   {
     id: Math.random() + '',
-    title: 'Third note',
-    body: getLorem() + getLorem(),
+    data: getLorem(),
     isPinned: false,
+    type: 'text', //image //todos //youtube //audio,
+    color: '#e0e0ff',
     createdAt: Date.now()
-  }
+  },
 ];

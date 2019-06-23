@@ -31,9 +31,10 @@ button {
 }
 
 
-.router-view {
+.router-view, .scrolable {
   overflow-y: scroll;
-  height: calc(100vh - 150px);
+  height: 100vh;
+  padding-bottom: 150px;
 }
 
 
@@ -47,8 +48,8 @@ button {
 
 
 @media(max-width:670px) {
-  .router-view {
-    padding-bottom: 100px;
+  .router-view, .scrolable {
+    padding-bottom: 200px;
   }
 }
 
