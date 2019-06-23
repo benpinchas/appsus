@@ -11,11 +11,9 @@ const NOTES_KEY = 'ehudBenNotes7';
 
 let gNotes = null;
 
-
 export function saveNotes() {
-    storageService.store(NOTES_KEY, gNotes)
+  storageService.store(NOTES_KEY, gNotes);
 }
-
 
 function query() {
   return storageService.load(NOTES_KEY).then(notes => {
@@ -29,6 +27,16 @@ function query() {
       });
     }
   });
+}
+
+export function deleteNote(noteToDelete) {
+  let noteIdx = gNotes.findIndex(note => note.id === noteToDelete.id);
+  if (noteIdx !== -1) {
+    gNotes.splice(noteIdx, 1);
+  }
+
+  saveNotes();
+  return Promise.resolve();
 }
 
 let starterNotes = [
@@ -49,7 +57,7 @@ let starterNotes = [
   {
     id: Math.random() + '',
     title: 'Third note',
-    body: getLorem()+getLorem(),
+    body: getLorem() + getLorem(),
     isPinned: false,
     createdAt: Date.now()
   }
