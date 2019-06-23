@@ -6,13 +6,12 @@ import { getLorem } from '../../../services/util-service.js';
 export default {
   query
 };
-const EMAILS_KEY = 'ehudBenEmails7';
+const EMAILS_KEY = 'ehudBenEmails8';
 
 let gEmails = null;
 
 export function query() {
-  if (gEmails) return Promise.resolve(gEmails);
-
+  // if (gEmails) return Promise.resolve(gEmails);
   return storageService.load(EMAILS_KEY).then(emails => {
     if (emails) {
       gEmails = emails;
