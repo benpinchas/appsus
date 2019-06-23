@@ -1,6 +1,6 @@
 'use strict';
 
-import {saveNotes} from '../services/keep.service.js'
+import { saveNotes, deleteNote } from '../services/keep.service.js';
 
 export default {
   name: 'notePreview',
@@ -49,13 +49,13 @@ export default {
   },
   computed: {
     logoSrc() {
-        return 'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg'
+      return 'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg';
     },
     fDate() {
       let date = new Date(this.note.createdAt);
       // new Date().toLocaleDateString();
       return date.toString().slice(16, 21); //+ '  ' + date.toLocaleDateString()
-    },
+    }
   },
   methods: {
     editContext(ev) {
@@ -70,15 +70,11 @@ export default {
         this.note.body = this.$refs.context.textContent
         saveNotes()
       }
-      // console.log(this.$refs.context.textContent);
-      // this.note.body = this.$refs.context.textContent
-      // saveNotes()
     },
     deleteThisNote() {
-      console.log('deleted');
-      // deleteEmail(this.email).then(() => {
-      //   console.log('deleted');
-      // });
+      deleteNote(this.note).then(() => {
+        console.log('deleted');
+      });
     },
   },
   mounted() {
