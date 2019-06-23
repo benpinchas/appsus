@@ -5,6 +5,7 @@ import { saveNotes, deleteNote } from '../services/keep.service.js';
 import textData from './note-data/text-data.cmp.js';
 import imageData from './note-data/image-data.cmp.js';
 import todosData from './note-data/todos-data.cmp.js';
+import videoData from './note-data/video-data.cmp.js';
 
 export default {
   name: 'notePreview',
@@ -76,7 +77,8 @@ export default {
   components: {
     textData,
     imageData,
-    todosData
+    todosData,
+    videoData
   },
   methods: {
     changeColor(color) {

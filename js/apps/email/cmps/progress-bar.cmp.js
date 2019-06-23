@@ -5,7 +5,7 @@ import { query, readEmailPercentage } from '../services/email.service.js';
 export default {
   name: 'progressBar',
   template: `
-          <div class="progress-bar">
+          <div class="progress-bar" style="display:none;">
                <span>Progress Bar: {{readMailsPercent}} %</span>
           </div>
       `,

@@ -33,7 +33,7 @@ button {
 
 .router-view, .scrolable {
   overflow-y: scroll;
-  height: 100vh;
+  height: calc(100vh - 150px);
   padding-bottom: 150px;
 }
 

@@ -3,8 +3,8 @@
 export default {
     template: `
             <div class="note-content" >
-                <i class="fas fa-edit" @click="editSrc" style="margin-bottom: 10px;"></i>
-                <img :src="data"/>
+                <!-- <i class="fas fa-edit" @click="editSrc" style="margin-bottom: 10px;"></i> -->
+                <img :src="data" style="max-height: 188px;" />
                 <input type="text" @change="setSrc" v-if="isEditContext" class="src-input"/>
             </div>
 

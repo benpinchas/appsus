@@ -18,6 +18,7 @@ export default {
               
               <div class="main"> 
                   <div class="note-content"> 
+                      <p style="margin: 0;">{{directions}}</p>
                     <p contentEditable class="body edit-context" ref="context" autofocus @keyup="addContext"></p>
                   </div> 
               </div>
@@ -59,6 +60,12 @@ export default {
         }
     },
     computed: {
+        directions() {
+            if (this.note.type === 'text') return 'Insert Plain Text'
+            else if (this.note.type === 'image') return 'Insert Image URL'
+            else if (this.note.type === 'video') return 'Insert Youtube Link'
+            else if (this.note.type === 'todos') return 'Type your Todos seperated by commas'
+        },
         logoSrc() {
             return 'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg';
         },
@@ -80,6 +87,8 @@ export default {
             this.gIcon = this.$refs[type]
             this.gIcon.classList.add('selected')
             this.note.type = type
+            
+            this.$refs.context.placeholder ="AAAA"
         },
         addContext() {
             this.note.data = this.$refs.context.textContent
