@@ -10,7 +10,9 @@ const EMAILS_KEY = 'ehudBenEmails7';
 
 let gEmails = null;
 
-function query() {
+export function query() {
+  if (gEmails) return Promise.resolve(gEmails);
+
   return storageService.load(EMAILS_KEY).then(emails => {
     if (emails) {
       gEmails = emails;
@@ -62,6 +64,11 @@ export function deleteEmail(emailToDelete) {
   console.log('HERR');
   saveEmails();
   return Promise.resolve();
+}
+
+export function readEmailPercentage() {
+  // return Promise.resolve(1);
+  return Date.now();
 }
 
 let starterEmails = {
