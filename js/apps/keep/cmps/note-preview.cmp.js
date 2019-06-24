@@ -1,6 +1,10 @@
 'use strict';
 
-import { saveNotes, deleteNote } from '../services/keep.service.js';
+import keepService, {
+  saveNotes,
+  deleteNote,
+  togglePinNote
+} from '../services/keep.service.js';
 
 import textData from './note-data/text-data.cmp.js';
 import imageData from './note-data/image-data.cmp.js';
@@ -17,7 +21,8 @@ export default {
               </div>
               <div class="main"> 
 
-
+                  <!-- {{type}} -->
+                  <!-- {{note.data}} -->
                   <component :is="type" :data="note.data"></component>
                   <!-- <text-data :data="note.data"></text-data>
                   <image-data :data="note.data"></image-data> -->
@@ -27,7 +32,7 @@ export default {
 
               <div class="edit-btns">
                 <span class="left-container">
-                  <i class="fas fa-flag"></i>
+                  <i class="fas fa-thumbtack" @click="setTogglePinNote" :class="{'pinned': note.isPinned}"></i>
                   <span class="color-picker">
                   <i class="fas fa-palette"></i>
                   
@@ -63,6 +68,8 @@ export default {
       };
     },
     type() {
+      console.log('NOTE:', this.note);
+      console.log('NOTE TYPE:', this.note.type);
       return this.note.type + '-data';
     },
     logoSrc() {
@@ -89,6 +96,12 @@ export default {
     deleteThisNote() {
       deleteNote(this.note).then(() => {
         console.log('deleted');
+      });
+    },
+    setTogglePinNote() {
+      console.log('PIN NOTE!');
+      togglePinNote(this.note).then(() => {
+        console.log('Pin Toggled!');
       });
     }
   },
