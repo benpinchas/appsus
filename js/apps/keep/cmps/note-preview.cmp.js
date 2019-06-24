@@ -33,7 +33,6 @@ export default {
               <div class="edit-btns">
                 <span class="left-container">
                   <i class="fas fa-thumbtack" @click="setTogglePinNote" :class="{'pinned': note.isPinned}"></i>
-                  <i class="fas fa-flag"></i>
                   <span class="color-picker">
                   <i class="fas fa-palette"></i>
                   
