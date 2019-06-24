@@ -19,6 +19,7 @@
 .app-header span {
   font-size: 3rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
 }
 
 @media(max-width:670px) {
