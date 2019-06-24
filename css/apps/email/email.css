@@ -43,6 +43,7 @@
     }
     .email-app .email-menu > main {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
         width: 97%;
         margin: 0 auto;
@@ -78,6 +79,25 @@
     .email-filter {
         /* background-color: green; */
         height: 43px;
+    }
+}
+
+
+
+.progress-bar {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.progress-line {
+    transition: .6s;
+    transform-origin: left;
+}
+
+@media(max-width: 670px) {
+    .progress-bar {
+        margin: 4px;
+        order: -1;
     }
 }
 
