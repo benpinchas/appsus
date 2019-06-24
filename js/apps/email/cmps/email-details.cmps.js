@@ -34,11 +34,11 @@ export default {
                 
                 <replay-cmp v-for="replay in email.replays" :replay="replay"></replay-cmp>
                 
-                <!-- v-on:keydown.enter="addReplay" -->
+                <!-- v-on:keydown.enter="addreplay" -->
                 <div class="replay-container" >   
-                    <p class="contact"> Replying to: {{email.contact.email}}</p>
+                    <p class="contact"> replaying to: {{email.contact.email}}</p>
                         <textarea ref="replayTextarea" placeholder="Type your replay.." autofocus></textarea>
-                        <button class="send-btn" @click="addReplay">Send</button>
+                        <button class="send-btn" @click="addreplay">Send</button>
                 </div>
             </main>
         </div>
@@ -56,7 +56,7 @@ export default {
     }
   },
   methods: {
-    addReplay() {
+    addreplay() {
       let replayTextarea = this.$refs.replayTextarea;
       if (!replayTextarea.value) return;
       let replay = {

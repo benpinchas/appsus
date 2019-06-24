@@ -1,5 +1,5 @@
 /* DELETE FROM HERE */
-.note-list {
+/* .note-list {
   columns: 3;
   max-width: 1200px;
   margin: 0 auto;
@@ -10,7 +10,7 @@
   .note-list {
     columns: 1;
   }
-}
+} */
 
 .note-preview textarea {
   margin: 0px;
@@ -151,3 +151,18 @@
   font-size: 20px;
   box-shadow: 0 0 1px #979797;
 }
+
+
+
+
+
+
+/* MANSORY */
+.mansory {
+  max-width: 1200px;
+  margin: 0 auto !important;
+}
+
+
+
+
