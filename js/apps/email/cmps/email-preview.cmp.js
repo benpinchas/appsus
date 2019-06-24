@@ -25,7 +25,7 @@ export default {
                 -
                 <span class="body">{{fBody}}</span> 
               </div>
-              <div class="time">
+              <div class="time" style="font-weight: 300;">
                 {{fDate}}
                 <i class="fas fa-trash" @click.stop="deleteThisEmail"></i>
               </div>
@@ -38,11 +38,7 @@ export default {
     }
   },
   computed: {
-    classObj() {
-      return {
-        'glow':  this.isNew
-      }
-    },
+
     fBody() {
       if (this.email.body.length > 14) {
         return this.email.body.slice(0, 14) + '..';

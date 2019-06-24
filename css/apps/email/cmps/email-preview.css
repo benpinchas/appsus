@@ -8,7 +8,7 @@
     justify-content: space-between;
     align-items: center;
 
-    transition: .7s;
+    transition: .7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
 
 .email-preview .star-read-container {

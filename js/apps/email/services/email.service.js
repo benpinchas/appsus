@@ -6,7 +6,7 @@ import { getLorem } from '../../../services/util-service.js';
 export default {
   query
 };
-const EMAILS_KEY = 'ehudBenEmails13';
+const EMAILS_KEY = 'ehudBenEmails14';
 
 let gEmails = null;
 
@@ -93,7 +93,7 @@ let starterEmails = {
       subject: 'First email',
       body: getLorem(),
       isRead: false,
-      sentAt: Date.now() - 300000,
+      sentAt: Date.now(),
       contact: {
         name: 'ehud',
         email: 'ehud@gmail.com'
@@ -109,7 +109,7 @@ let starterEmails = {
       subject: 'First email',
       body: getLorem(),
       isRead: false,
-      sentAt: Date.now() - 300000,
+      sentAt: Date.now(),
       contact: {
         name: 'ehud',
         email: 'ehud@gmail.com'
