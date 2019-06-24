@@ -18,7 +18,7 @@ export default {
               
               <div class="main"> 
                   <div class="note-content"> 
-                      <p style="margin: 0;">{{directions}}</p>
+                      <p style="margin: 0;font-weight:300;">{{directions}}</p>
                     <p contentEditable class="body edit-context" ref="context" autofocus @keyup="addContext"></p>
                   </div> 
               </div>

@@ -2,11 +2,16 @@
 
 /* DELETE FROM HERE */
 .note-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: baseline;
+  columns: 3;
 }
+
+
+@media(max-width: 670px) {
+  .note-list {
+    columns: 1;
+  }
+}
+
 
 
 .note-preview textarea {
@@ -39,7 +44,7 @@
   border-radius: 9px;
   padding: 11px;
   transition: .3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-
+  z-index: 10;
   background-color: #ffffff;
   box-shadow: 0 0 6px rgba(201, 193, 193, 0.5);
   transform: scale(1.1);
@@ -55,7 +60,7 @@
   border-radius: 9px;
   margin: 10px;
   box-shadow: 0 0 5px #b9b9b9;
-
+  display: inline-block;
   position: relative;
   padding-bottom: 33px;
 }

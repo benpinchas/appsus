@@ -39,6 +39,27 @@
 }
 
 
+
+.add-note .note-preview .body {
+    min-height: 50px;
+    border-radius: 9px;
+    margin: 4px 0;
+    transform: scale(1);
+}
+.add-note .note-preview .main {
+    margin: 0px 10px;
+    margin-top: 0;
+}
+
+.add-note .note-preview .edit-btns {
+    padding: 5px 0;
+    bottom: 5px;
+}
+
+.add-note .note-preview {
+    padding-bottom: 22px;
+}
+
 /* icons fa */
 .note-kinds .fa-youtube:hover {
    

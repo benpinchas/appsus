@@ -47,6 +47,10 @@ button {
 
 
 
+body{ 
+  -webkit-column-break-inside:avoid !important;
+}
+
 @media(max-width:670px) {
   .router-view, .scrolable {
     padding-bottom: 200px;
