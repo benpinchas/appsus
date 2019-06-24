@@ -11,7 +11,7 @@ export default {
   name: 'emailApp',
   template: `
         <section class="email-app">
-            <email-menu></email-menu>
+            <email-menu :emails="emails"></email-menu>
             
             <main>
               <email-filter @set-filter="setFilter" @setSortBy="setSortBy" @searchTxt="searchByTxt"></email-filter>  

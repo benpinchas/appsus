@@ -5,23 +5,16 @@
 export default {
   name: 'progressBar',
   template: `
-          <div class="progress-bar" style="display:none;">
-               <span>Progress Bar: {{readCount}} %</span>
+          <div class="progress-bar" style="" v-if="emails">
+               <span>Progress Bar: {{readedPercent}} %</span>
           </div>
       `,
-  // data() {
-  //   return { percent: 0 };
-  // },
-  data() {
-    return {
-      readCount: 0,
+  props: ['emails'],
+  computed: {
+    readedPercent() {
+        let readedCount = this.emails.incomes.filter(email => email.isRead)
+        return parseInt(readedCount.length /  this.emails.incomes.length * 100)
     }
-  },
-  mounted() {
-    // readEmailPercentage()
-    //   .then((readCount) => {
-    //     return this.readCount = readCount
-    //   })
   }
 
 };
