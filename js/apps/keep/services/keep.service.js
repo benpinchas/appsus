@@ -34,8 +34,12 @@ function query() {
   });
 }
 
+function getIdxByNote(theNote) {
+  return gNotes.findIndex(note => note.id === theNote.id);
+}
+
 export function deleteNote(noteToDelete) {
-  let noteIdx = gNotes.findIndex(note => note.id === noteToDelete.id);
+  let noteIdx = getIdxByNote(noteToDelete);
   if (noteIdx !== -1) {
     gNotes.splice(noteIdx, 1);
   }
@@ -44,22 +48,48 @@ export function deleteNote(noteToDelete) {
   return Promise.resolve();
 }
 
+export function togglePinNote(noteToTogglePin) {
+  console.log(noteToTogglePin.isPinned);
+
+  let noteIdx = getIdxByNote(noteToTogglePin);
+
+  gNotes[noteIdx].isPinned = !gNotes[noteIdx].isPinned;
+
+  // console.log(gNotes[noteIdx])
+  if (gNotes[noteIdx].isPinned) {
+    //if (noteIdx !== 0) {
+    let splicedNote = gNotes.splice(noteIdx, 1);
+    console.log('SPLICED NOTE', splicedNote);
+    gNotes.unshift(splicedNote[0]);
+    //}
+  } else {
+    //if (noteIdx !== gNotes.length - 1) {
+    let splicedNote = gNotes.splice(noteIdx, 1);
+    gNotes.push(splicedNote[0]);
+    //}
+  }
+
+  saveNotes();
+
+  return Promise.resolve();
+}
+
 let starterNotes = [
+  {
+    id: Math.random() + '',
+    data:
+      'https://www.worldatlas.com/r/w728-h425-c728x425/upload/32/ed/dd/shutterstock-611361698.jpg',
+    isPinned: true,
+    type: 'image', //image //todos //youtube //audio,
+    color: '#ffe4e8',
+    createdAt: Date.now()
+  },
   {
     id: Math.random() + '',
     data: getLorem(),
     isPinned: false,
     type: 'text', //image //todos //youtube //audio,
     color: 'whitesmoke',
-    createdAt: Date.now()
-  },
-  {
-    id: Math.random() + '',
-    data:
-      'https://www.worldatlas.com/r/w728-h425-c728x425/upload/32/ed/dd/shutterstock-611361698.jpg',
-    isPinned: false,
-    type: 'image', //image //todos //youtube //audio,
-    color: '#ffe4e8',
     createdAt: Date.now()
   },
   {
