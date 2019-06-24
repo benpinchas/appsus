@@ -10,8 +10,21 @@ const EMAILS_KEY = 'ehudBenEmails14';
 
 let gEmails = null;
 
+// export function readEmailPercentage() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       let readedCount = gEmails.incomes.filter(email => email.isRead)
+//       resolve(parseInt(readedCount.length / gEmails.incomes.length * 100))
+//     }, 1500)
+//   })
+// }
+
+
 export function query() {
-  // if (gEmails) return Promise.resolve(gEmails);
+  if (gEmails) {
+    console.log('GOOD');
+    return Promise.resolve(gEmails);
+  }
   return storageService.load(EMAILS_KEY).then(emails => {
     if (emails) {
       gEmails = emails;
@@ -65,10 +78,6 @@ export function deleteEmail(emailToDelete) {
   return Promise.resolve();
 }
 
-export function readEmailPercentage() {
-  // return Promise.resolve(1);
-  return Date.now();
-}
 
 let starterEmails = {
   incomes: [

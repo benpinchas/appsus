@@ -8,7 +8,7 @@ export default {
         <main>
         General Appsus header CMP
         <app-navigator></app-navigator>
-        <mini-list></mini-list>
+        <!-- <mini-list></mini-list> -->
     </main>
     </section>
     `,

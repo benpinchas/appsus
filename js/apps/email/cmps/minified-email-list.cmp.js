@@ -5,8 +5,8 @@
 export default {
   name: 'miniList',
   template: `
-        <section class="email-list" >
-            miniList miniList miniList miniList miniList
+        <section class="mini-email-list" >
+            <i class="fas fa-envelope"></i>
             <!-- <email-preview v-for="email in emails" :email="email" :key="email.id"></email-preview> -->
         </section>
     `,

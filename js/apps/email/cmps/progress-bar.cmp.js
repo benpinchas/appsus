@@ -1,31 +1,27 @@
 'use strict';
 
-import { query, readEmailPercentage } from '../services/email.service.js';
+// import {readEmailPercentage } from '../services/email.service.js';
 
 export default {
   name: 'progressBar',
   template: `
           <div class="progress-bar" style="display:none;">
-               <span>Progress Bar: {{readMailsPercent}} %</span>
+               <span>Progress Bar: {{readCount}} %</span>
           </div>
       `,
   // data() {
   //   return { percent: 0 };
   // },
-  computed: {
-    readMailsPercent() {
-      // var length = 0;
-      // query().then(emails => {
-      //   length = emails.incomes.length;
-      //   console.log('inside then', length);
-      //   return length;
-      // });
-      // console.log('after then', length);
-      // return length;
-      // return readEmailPercentage().then(readEmailsPercent => {
-      //   console.log('read mails percentage', readEmailsPercent);
-      //   this.percent = readEmailsPercent;
-      // });
+  data() {
+    return {
+      readCount: 0,
     }
+  },
+  mounted() {
+    // readEmailPercentage()
+    //   .then((readCount) => {
+    //     return this.readCount = readCount
+    //   })
   }
+
 };
