@@ -29,14 +29,6 @@
     justify-content: space-between;
 }
 
-.email-details .replay-container {
-    background-color: white;
-    padding: 10px 20px;
-    border-radius: 7px;
-    width: 100%;
-    box-shadow: 0 0 6px #d6d6d6;
-    margin-top: 40px;
-}
 
 .email-details .send-btn {
     background-color: #0084ff;
@@ -66,8 +58,21 @@
     font-size: 16px;
 }
 
+
+.email-details .replay-container {
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 7px;
+    width: 100%;
+    box-shadow: 0 0 6px #d6d6d6;
+    margin-top: 40px;
+}
+
+
+
 .replay-cmp {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 5px;
     color: #262626;
@@ -75,6 +80,19 @@
     padding: 10px;
     border-radius: 9px;
 }
+
+.replay-cmp .top {
+    width: 100%;
+    margin: 1px 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 15px;
+    font-weight: 300;
+    color: #6d6d6d;
+}
+
 
 .replay-cmp .replay-txt {
     overflow-x: auto;

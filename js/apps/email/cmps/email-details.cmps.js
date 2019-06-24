@@ -5,8 +5,15 @@ import { getEmailById } from '../services/email.service.js';
 
 let replayCmp = {
   template: `<div class="replay-cmp">
-                    <p class="replay-txt"><span style="font-weight: 700;">Re: </span>{{replay.txt}} </p>
-                    <p class="light"> {{fDate}}</p>
+                    <p class="top">
+                      <span  class="from">
+                        <i class="far fa-comment-dots" style="margin-right: 7px;"></i>
+                        {{replay.author}}
+                      </span>
+                      <span class="time"> {{fDate}}</span>
+                  </p>
+                    <p class="replay-txt">{{replay.txt}} </p>
+                    
                 </div>`,
   props: ['replay'],
   computed: {
@@ -60,6 +67,7 @@ export default {
       let replayTextarea = this.$refs.replayTextarea;
       if (!replayTextarea.value) return;
       let replay = {
+        author: 'me@gmail.com',
         txt: replayTextarea.value,
         time: Date.now()
       };
