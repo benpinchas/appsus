@@ -74,114 +74,170 @@ let starterEmails = {
   incomes: [
     {
       id: Math.random() + '',
-      subject: 'First email ehud',
+      subject: 'Your new born child and is new home.',
       body: getLorem(),
       isRead: false,
       sentAt: Date.now(),
       contact: {
-        name: 'ehud',
+        name: 'Ehud Peller',
         email: 'ehud@gmail.com'
       },
       isStarred: false,
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 },
-        {author: 'me@gmail.com', txt: 'Seconed replay good to see', time: Date.now() }
+        {
+          author: 'metal@gmail.com',
+          txt: 'My reply is as follows: no.',
+          time: Date.now() - 10000
+        },
+        {
+          author: 'meandyou@gmail.com',
+          txt: 'In the matter of the house.',
+          time: Date.now()
+        }
       ]
     },
     {
       id: Math.random() + '',
-      subject: 'First email',
+      subject: 'My first book of the unknown',
       body: getLorem(),
       isRead: false,
       sentAt: Date.now(),
       contact: {
-        name: 'ehud',
-        email: 'ehud@gmail.com'
+        name: 'Ari Kork',
+        email: 'ari1989@gmail.com'
       },
       isStarred: false,
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 },
-        {author: 'me@gmail.com', txt: 'Seconed replay good to see', time: Date.now() }
+        {
+          author: 'me@gmail.com',
+          txt: 'I do not agree',
+          time: Date.now() - 10000
+        },
+        {
+          author: 'me@gmail.com',
+          txt: 'Trip to New York',
+          time: Date.now()
+        }
       ]
     },
     {
       id: Math.random() + '',
-      subject: 'First email',
+      subject: 'Air plane flight',
       body: getLorem(),
       isRead: false,
       sentAt: Date.now(),
       contact: {
-        name: 'ehud',
-        email: 'ehud@gmail.com'
+        name: 'Sigal Dustch',
+        email: 'dust@gmail.com'
       },
       isStarred: false,
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 },
-        {author: 'me@gmail.com', txt: 'Seconed replay good to see', time: Date.now() }
+        {
+          author: 'me@gmail.com',
+          txt: 'You and me will go',
+          time: Date.now() - 10000
+        },
+        {
+          author: 'me@gmail.com',
+          txt: 'Good to see you too',
+          time: Date.now()
+        }
       ]
     },
     {
       id: Math.random() + '',
-      subject: 'Nice Day',
+      subject: 'Nice Day to you too',
       body: getLorem(),
       isRead: false,
       sentAt: Date.now() - 33000,
       contact: {
-        name: 'ehud',
-        email: 'ehud@gmail.com'
+        name: 'Erik Benglar',
+        email: 'erik@gmail.com'
       },
       isStarred: false,
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 },
-        {author: 'me@gmail.com', txt: 'Seconed replay good to see', time: Date.now() }
+        {
+          author: 'me@ygmail.com',
+          txt: 'As i lay at the beach',
+          time: Date.now() - 10000
+        },
+        {
+          author: 'me@gmail.com',
+          txt: 'You see my point',
+          time: Date.now()
+        }
       ]
     },
     {
       id: Math.random() + '',
-      subject: 'First email',
+      subject: 'The children are playing',
       body: getLorem(),
       isRead: false,
       sentAt: Date.now() - 34000,
       contact: {
-        name: 'ehud',
-        email: 'ehud@gmail.com'
-      },
-      isStarred: false,
-      replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 },
-        {author: 'me@gmail.com', txt: 'Seconed replay good to see', time: Date.now() }
-      ]
-    },
-    {
-      id: Math.random() + '',
-      subject: 'First email',
-      body: getLorem(),
-      isRead: false,
-      sentAt: Date.now() - 30500,
-      contact: {
-        name: 'ehud',
-        email: 'ehud@gmail.com'
-      },
-      isStarred: false,
-      replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 },
-        {author: 'me@gmail.com', txt: 'Seconed replay good to see', time: Date.now() }
-      ]
-    },
-    {
-      id: Math.random() + '',
-      subject: '2 email',
-      body: getLorem(),
-      isRead: false,
-      sentAt: Date.now() - 10000,
-      contact: {
-        name: 'ben',
+        name: 'Ben Peres',
         email: 'ben@gmail.com'
       },
       isStarred: false,
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 },
-        {author: 'me@gmail.com', txt: 'Seconed replay good to see', time: Date.now() }
+        {
+          author: 'me@gmail.com',
+          txt: '2 weeks to the festival',
+          time: Date.now() - 10000
+        },
+        {
+          author: 'me@gmail.com',
+          txt: 'After the ride',
+          time: Date.now()
+        }
+      ]
+    },
+    {
+      id: Math.random() + '',
+      subject: 'First and last',
+      body: getLorem(),
+      isRead: false,
+      sentAt: Date.now() - 30500,
+      contact: {
+        name: 'Sally Jacks',
+        email: 'sally@gmail.com'
+      },
+      isStarred: false,
+      replays: [
+        {
+          author: 'me@mail.com',
+          txt: 'I am the savior',
+          time: Date.now() - 10000
+        },
+        {
+          author: 'me@gmail.com',
+          txt: 'Good to see you too.',
+          time: Date.now()
+        }
+      ]
+    },
+    {
+      id: Math.random() + '',
+      subject: 'Previous contact',
+      body: getLorem(),
+      isRead: false,
+      sentAt: Date.now() - 10000,
+      contact: {
+        name: 'Ben Megged',
+        email: 'ben@gmail.com'
+      },
+      isStarred: false,
+      replays: [
+        {
+          author: 'me@gmail.com',
+          txt: 'Welcome here!.',
+          time: Date.now() - 10000
+        },
+        {
+          author: 'me@gmail.com',
+          txt: 'Second chance',
+          time: Date.now()
+        }
       ]
     },
     {
@@ -196,24 +252,40 @@ let starterEmails = {
       },
       isStarred: true,
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 },
-        {author: 'me@gmail.com', txt: 'Seconed replay good to see', time: Date.now() }
+        {
+          author: 'me@gmail.com',
+          txt: 'I am here now',
+          time: Date.now() - 10000
+        },
+        {
+          author: 'me@gmail.com',
+          txt: 'Cat replay good to see you.',
+          time: Date.now()
+        }
       ]
     },
     {
       id: Math.random() + '',
-      subject: 'First email',
-      body: 'Bla bla bla',
+      subject: 'First encounter',
+      body: 'Me and you',
       isRead: false,
       sentAt: Date.now() - 300000,
       contact: {
-        name: 'ehud',
-        email: 'ehud@gmail.com'
+        name: 'Ella Miss',
+        email: 'ella@gmail.com'
       },
       isStarred: false,
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 },
-        {author: 'me@gmail.com', txt: 'Seconed replay good to see', time: Date.now() }
+        {
+          author: 'me@gmail.com',
+          txt: 'Sea in the noon',
+          time: Date.now() - 10000
+        },
+        {
+          author: 'me@gmail.com',
+          txt: 'Second chance to hear',
+          time: Date.now()
+        }
       ]
     },
     {
@@ -223,15 +295,15 @@ let starterEmails = {
       isRead: false,
       sentAt: Date.now() - 10000,
       contact: {
-        name: 'ben',
-        email: 'ben@gmail.com'
+        name: 'Marvin',
+        email: 'mar@gmail.com'
       },
       isStarred: false,
       replays: []
     },
     {
       id: Math.random() + '',
-      subject: '3 email',
+      subject: '3 email not answered',
       body: getLorem(),
       isRead: true,
       sentAt: Date.now() - 123123123123,
@@ -240,51 +312,69 @@ let starterEmails = {
         email: 'tal@gmail.com'
       },
       isStarred: true,
-      replays: [{author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 }]
+      replays: [
+        {
+          author: 'me@gmail.com',
+          txt: 'In the closet place',
+          time: Date.now() - 10000
+        }
+      ]
     },
     {
       id: Math.random() + '',
-      subject: 'First email',
+      subject: 'First and last email',
       body: getLorem(),
       isRead: false,
       sentAt: Date.now() - 30220000,
       contact: {
-        name: 'ehud',
-        email: 'ehud@gmail.com'
+        name: 'Jamal Brad',
+        email: 'jamal@gmail.com'
       },
       isStarred: false,
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 }
+        {
+          author: 'me@gmail.com',
+          txt: 'Last replay here',
+          time: Date.now() - 10000
+        }
       ]
     },
     {
       id: Math.random() + '',
-      subject: '2 email',
+      subject: '2 emails left',
       body: getLorem(),
       isRead: false,
       sentAt: Date.now() - 1001100,
       contact: {
-        name: 'ben',
-        email: 'ben@gmail.com'
+        name: 'beni',
+        email: 'beni@gmail.com'
       },
       isStarred: false,
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 }
+        {
+          author: 'me@gmail.com',
+          txt: 'You tube replay here',
+          time: Date.now() - 10000
+        }
       ]
     },
     {
       id: Math.random() + '',
-      subject: '3 email',
+      subject: 'Now there are 3 emails',
       body: getLorem(),
       isRead: true,
       sentAt: Date.now() - 123123123123,
       contact: {
-        name: 'tal',
+        name: 'tally',
         email: 'tal@gmail.com'
       },
       isStarred: true,
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 }
+        {
+          author: 'me@gmail.com',
+          txt: 'Hello here',
+          time: Date.now() - 10000
+        }
       ]
     }
   ],
@@ -292,7 +382,7 @@ let starterEmails = {
   sent: [
     {
       id: Math.random() + '',
-      subject: 'Sent',
+      subject: 'Sent the phone',
       body: getLorem(),
       sentAt: Date.now(),
       contact: {
@@ -300,12 +390,16 @@ let starterEmails = {
         email: 'bobi@gmail.com'
       },
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 }
+        {
+          author: 'me@gmail.com',
+          txt: 'Add replay here',
+          time: Date.now() - 10000
+        }
       ]
     },
     {
       id: Math.random() + '',
-      subject: 'Sent2',
+      subject: 'Send to the office',
       body: getLorem(),
       sentAt: Date.now(),
       contact: {
@@ -313,33 +407,45 @@ let starterEmails = {
         email: 'bobi@gmail.com'
       },
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 }
+        {
+          author: 'me@gmail.com',
+          txt: 'As the replay here last',
+          time: Date.now() - 10000
+        }
       ]
     },
     {
       id: Math.random() + '',
-      subject: 'Good Day',
+      subject: 'Good Day for you sir',
       body: getLorem(),
       sentAt: Date.now(),
       contact: {
-        name: 'Bob',
-        email: 'bobi@gmail.com'
+        name: 'Bob Anslow',
+        email: 'bobin@gmail.com'
       },
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 }
+        {
+          author: 'me@gmail.com',
+          txt: 'Igor i am new here',
+          time: Date.now() - 10000
+        }
       ]
     },
     {
       id: Math.random() + '',
-      subject: 'Hello Avi',
+      subject: 'Hello Avi.',
       body: getLorem(),
       sentAt: Date.now(),
       contact: {
-        name: 'Nami',
-        email: 'bobi@gmail.com'
+        name: 'Nami Nami',
+        email: 'nami@gmail.com'
       },
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 }
+        {
+          author: 'me@gmail.com',
+          txt: 'Last fast',
+          time: Date.now() - 10000
+        }
       ]
     },
     {
@@ -348,24 +454,32 @@ let starterEmails = {
       body: getLorem(),
       sentAt: Date.now(),
       contact: {
-        name: 'Nami',
-        email: 'bobi@gmail.com'
+        name: 'Nas Nis',
+        email: 'albert@gmail.com'
       },
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 }
+        {
+          author: 'men@gmail.com',
+          txt: 'Drop replay here',
+          time: Date.now() - 10000
+        }
       ]
     },
     {
       id: Math.random() + '',
-      subject: 'Goddbye',
+      subject: 'Goodbye',
       body: getLorem(),
       sentAt: Date.now(),
       contact: {
-        name: 'Nami',
-        email: 'bobi@gmail.com'
+        name: 'Mat Nemeso',
+        email: 'mat@gmail.com'
       },
       replays: [
-        {author: 'me@gmail.com', txt: 'Fisrt replay here', time: Date.now() - 10000 }
+        {
+          author: 'me@gmail.com',
+          txt: 'Far the odds',
+          time: Date.now() - 10000
+        }
       ]
     }
   ]
