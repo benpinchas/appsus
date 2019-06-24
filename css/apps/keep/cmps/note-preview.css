@@ -122,7 +122,7 @@
 }
 
 .edit-btns .pinned {
-  color: black;
+  color: red;
 }
 
 .fas.fa-trash:hover {
