@@ -1,6 +1,8 @@
 /* DELETE FROM HERE */
 .note-list {
   columns: 3;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 
@@ -10,11 +12,6 @@
   }
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 80a5d03dece5d8a11f62be850a1be3abce4a5db4
 .note-preview textarea {
   margin: 0px;
   width: 100%;
@@ -35,6 +32,7 @@
 
 .note-content {
   margin-bottom: 10px;
+  overflow-wrap: break-word;
 }
 
 .note-content.edit-context {
@@ -44,13 +42,8 @@
   outline: none;
   border-radius: 9px;
   padding: 11px;
-<<<<<<< HEAD
   transition: .3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
   z-index: 10;
-=======
-  transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-
->>>>>>> 80a5d03dece5d8a11f62be850a1be3abce4a5db4
   background-color: #ffffff;
   box-shadow: 0 0 6px rgba(201, 193, 193, 0.5);
   transform: scale(1.1);
@@ -105,8 +98,8 @@
 }
 
 .note-preview .body {
-  font-size: 15px;
-  min-height: 150px;
+  font-size: 17px;
+  /* min-height: 150px; */
 }
 
 .note-preview .edit-btns {
@@ -146,6 +139,9 @@
 /* icons */
 .note-preview .fa-image {
   color: #e88500;
+}
+.note-preview .fa-list-ul {
+  color: #2f947a;
 }
 
 .src-input {
