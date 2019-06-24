@@ -5,7 +5,7 @@ import { saveEmails, deleteEmail } from '../services/email.service.js';
 export default {
   name: 'emailPreview',
   template: `
-        <div class="email-preview" @click="readEmail" v-bind:class="{'unread': isIncomeMail && !email.isRead}" v-if="email">
+        <div class="email-preview" @click="readEmail" v-bind:class="{'unread': isIncomeMail && !email.isRead, 'glow': this.isNew}" v-if="email">
               <div class="name">
                   <span v-if="isIncomeMail" class="star-read-container">
                     <span @click.stop="toggleStar">
@@ -32,7 +32,17 @@ export default {
         </div>
     `,
   props: ['email'],
+  data() {
+    return {
+      isNew: Date.now() - this.email.sentAt < 3000 
+    }
+  },
   computed: {
+    classObj() {
+      return {
+        'glow':  this.isNew
+      }
+    },
     fBody() {
       if (this.email.body.length > 14) {
         return this.email.body.slice(0, 14) + '..';
@@ -74,6 +84,11 @@ export default {
       console.log(this.$route.fullPath);
       this.$router.push(`${this.$route.fullPath}/read/${this.email.id}`);
     }
+  },
+  mounted() {
+    setInterval(() => {
+        this.isNew = false;
+    }, 2500);
   }
 };
 

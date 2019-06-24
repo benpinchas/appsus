@@ -79,6 +79,8 @@
     box-shadow: 0 0 3px #cecece;
     padding: 10px;
     border-radius: 9px;
+    
+    transition: .7s;
 }
 
 .replay-cmp .top {

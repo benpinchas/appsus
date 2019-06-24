@@ -4,7 +4,7 @@ import { saveEmails } from '../services/email.service.js';
 import { getEmailById } from '../services/email.service.js';
 
 let replayCmp = {
-  template: `<div class="replay-cmp">
+  template: `<div class="replay-cmp" :class="classObj">
                     <p class="top">
                       <span  class="from">
                         <i class="far fa-comment-dots" style="margin-right: 7px;"></i>
@@ -16,11 +16,26 @@ let replayCmp = {
                     
                 </div>`,
   props: ['replay'],
+  data() {
+    return {
+      isNew: Date.now() - this.replay.time < 3000, 
+    }
+  },
   computed: {
+    classObj() {
+      return {
+        'glow':  this.isNew
+      }
+    },
     fDate() {
       let date = new Date(this.replay.time);
       return date.toString().slice(16, 21); //+ '  ' + date.toLocaleDateString()
     }
+  },
+  mounted() {
+    setInterval(() => {
+        this.isNew = false;
+    }, 2500);
   }
 };
 
@@ -43,8 +58,8 @@ export default {
                 
                 <!-- v-on:keydown.enter="addreplay" -->
                 <div class="replay-container" >   
-                    <p class="contact"> replaying to: {{email.contact.email}}</p>
-                        <textarea ref="replayTextarea" placeholder="Type your replay.." autofocus></textarea>
+                    <p class="contact"> replying to: {{email.contact.email}}</p>
+                        <textarea ref="replayTextarea" placeholder="Enter your reply.." ></textarea>
                         <button class="send-btn" @click="addreplay">Send</button>
                 </div>
             </main>
