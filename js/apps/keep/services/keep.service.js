@@ -94,14 +94,6 @@ let starterNotes = [
   },
   {
     id: Math.random() + '',
-    data: getLorem(),
-    isPinned: false,
-    type: 'text', //image //todos //youtube //audio,
-    color: '#e0e0ff',
-    createdAt: Date.now()
-  },
-  {
-    id: Math.random() + '',
     data: [
       { id: Math.random() + '', txt: 'Dator Rio', isDone: true },
       { id: Math.random() + '', txt: 'Riof', isDone: false },

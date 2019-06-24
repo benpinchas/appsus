@@ -6,7 +6,7 @@ import { getLorem } from '../../../services/util-service.js';
 export default {
   query
 };
-const EMAILS_KEY = 'ehudBenEmails17';
+const EMAILS_KEY = 'ehudBenEmails18';
 
 let gEmails = null;
 
@@ -81,7 +81,7 @@ let starterEmails = {
   incomes: [
     {
       id: Math.random() + '',
-      subject: 'Your new born child and is new home.',
+      subject: 'Your new born child and his new home.',
       body: getLorem(),
       isRead: false,
       sentAt: Date.now(),
