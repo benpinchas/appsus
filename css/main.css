@@ -38,6 +38,11 @@ button {
   padding-bottom: 150px;
 }
 
+.scrolable.miss-keep {
+  height: calc(100vh - 70px);
+  padding-bottom: 70px;
+}
+
 .home-page {
   height: 100vh;
   /* padding-top: 700px; */
