@@ -12,8 +12,9 @@
   align-items: center;
 }
 
-.app-header .fa-horse-head {
+.app-header .fa-horse-head, .fa-fire-alt {
   font-size: 40px;
+  color: #007cef;
 }
 
 .app-header span {

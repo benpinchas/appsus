@@ -15,10 +15,10 @@
 }
 
 .navigator .navigation-window{
-    background-color: white;
+    background-color: #5d5d5de0;
 
     position: absolute;
-    right: 0;
+    right: 40px;
     width: 300px;
     height: 250px;
     padding: 10px;
@@ -33,11 +33,12 @@
 
 .navigator a {
     margin: 5px;
-    color: black;
+    color: white;
     font-size: 50px;
     text-decoration: none;
 }
 
 .navigator a.router-link-active {
-    color: #0076f6;
+    color: white;
+    border-bottom: 2px solid white;
 }
