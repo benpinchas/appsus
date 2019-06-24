@@ -6,7 +6,7 @@ import { getLorem } from '../../../services/util-service.js';
 export default {
   query
 };
-const EMAILS_KEY = 'ehudBenEmails14';
+const EMAILS_KEY = 'ehudBenEmails17';
 
 let gEmails = null;
 
@@ -18,7 +18,6 @@ let gEmails = null;
 //     }, 1500)
 //   })
 // }
-
 
 export function query() {
   if (gEmails) {
@@ -78,7 +77,6 @@ export function deleteEmail(emailToDelete) {
   return Promise.resolve();
 }
 
-
 let starterEmails = {
   incomes: [
     {
@@ -88,7 +86,7 @@ let starterEmails = {
       isRead: false,
       sentAt: Date.now(),
       contact: {
-        name: 'Ehud Peller',
+        name: 'Ari',
         email: 'ehud@gmail.com'
       },
       isStarred: false,
@@ -112,7 +110,7 @@ let starterEmails = {
       isRead: false,
       sentAt: Date.now(),
       contact: {
-        name: 'Ari Kork',
+        name: 'Ari',
         email: 'ari1989@gmail.com'
       },
       isStarred: false,
@@ -136,7 +134,7 @@ let starterEmails = {
       isRead: false,
       sentAt: Date.now(),
       contact: {
-        name: 'Sigal Dustch',
+        name: 'Ben',
         email: 'dust@gmail.com'
       },
       isStarred: false,
@@ -160,7 +158,7 @@ let starterEmails = {
       isRead: false,
       sentAt: Date.now() - 33000,
       contact: {
-        name: 'Erik Benglar',
+        name: 'Eri',
         email: 'erik@gmail.com'
       },
       isStarred: false,
@@ -184,7 +182,7 @@ let starterEmails = {
       isRead: false,
       sentAt: Date.now() - 34000,
       contact: {
-        name: 'Ben Peres',
+        name: 'Ben',
         email: 'ben@gmail.com'
       },
       isStarred: false,
@@ -208,7 +206,7 @@ let starterEmails = {
       isRead: false,
       sentAt: Date.now() - 30500,
       contact: {
-        name: 'Sally Jacks',
+        name: 'Sal',
         email: 'sally@gmail.com'
       },
       isStarred: false,
@@ -232,7 +230,7 @@ let starterEmails = {
       isRead: false,
       sentAt: Date.now() - 10000,
       contact: {
-        name: 'Ben Megged',
+        name: 'Ben',
         email: 'ben@gmail.com'
       },
       isStarred: false,
@@ -280,7 +278,7 @@ let starterEmails = {
       isRead: false,
       sentAt: Date.now() - 300000,
       contact: {
-        name: 'Ella Miss',
+        name: 'Ela',
         email: 'ella@gmail.com'
       },
       isStarred: false,
@@ -304,7 +302,7 @@ let starterEmails = {
       isRead: false,
       sentAt: Date.now() - 10000,
       contact: {
-        name: 'Marvin',
+        name: 'Ari',
         email: 'mar@gmail.com'
       },
       isStarred: false,
@@ -317,7 +315,7 @@ let starterEmails = {
       isRead: true,
       sentAt: Date.now() - 123123123123,
       contact: {
-        name: 'tal',
+        name: 'Tal',
         email: 'tal@gmail.com'
       },
       isStarred: true,
@@ -336,7 +334,7 @@ let starterEmails = {
       isRead: false,
       sentAt: Date.now() - 30220000,
       contact: {
-        name: 'Jamal Brad',
+        name: 'Tal',
         email: 'jamal@gmail.com'
       },
       isStarred: false,
@@ -355,7 +353,7 @@ let starterEmails = {
       isRead: false,
       sentAt: Date.now() - 1001100,
       contact: {
-        name: 'beni',
+        name: 'Ben',
         email: 'beni@gmail.com'
       },
       isStarred: false,
@@ -374,7 +372,7 @@ let starterEmails = {
       isRead: true,
       sentAt: Date.now() - 123123123123,
       contact: {
-        name: 'tally',
+        name: 'Tal',
         email: 'tal@gmail.com'
       },
       isStarred: true,
@@ -395,7 +393,7 @@ let starterEmails = {
       body: getLorem(),
       sentAt: Date.now(),
       contact: {
-        name: 'bobi',
+        name: 'Bob',
         email: 'bobi@gmail.com'
       },
       replays: [
@@ -412,7 +410,7 @@ let starterEmails = {
       body: getLorem(),
       sentAt: Date.now(),
       contact: {
-        name: 'Momo',
+        name: 'Mom',
         email: 'bobi@gmail.com'
       },
       replays: [
@@ -429,7 +427,7 @@ let starterEmails = {
       body: getLorem(),
       sentAt: Date.now(),
       contact: {
-        name: 'Bob Anslow',
+        name: 'Bob',
         email: 'bobin@gmail.com'
       },
       replays: [
@@ -446,7 +444,7 @@ let starterEmails = {
       body: getLorem(),
       sentAt: Date.now(),
       contact: {
-        name: 'Nami Nami',
+        name: 'Nami',
         email: 'nami@gmail.com'
       },
       replays: [
@@ -463,7 +461,7 @@ let starterEmails = {
       body: getLorem(),
       sentAt: Date.now(),
       contact: {
-        name: 'Nas Nis',
+        name: 'Nas',
         email: 'albert@gmail.com'
       },
       replays: [
@@ -480,7 +478,7 @@ let starterEmails = {
       body: getLorem(),
       sentAt: Date.now(),
       contact: {
-        name: 'Mat Nemeso',
+        name: 'Mat',
         email: 'mat@gmail.com'
       },
       replays: [
