@@ -1,4 +1,5 @@
 import appNavigator from './navigator.cmp.js';
+import miniList from '../apps/email/cmps/minified-email-list.cmp.js'
 
 export default {
   name: 'appHeader',
@@ -7,10 +8,12 @@ export default {
         <main>
         General Appsus header CMP
         <app-navigator></app-navigator>
+        <mini-list></mini-list>
     </main>
     </section>
     `,
   components: {
-    appNavigator
+    appNavigator,
+    miniList
   }
 };

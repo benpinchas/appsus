@@ -4,6 +4,7 @@
 
 @import './cmps/app-header.cmp.css';
 @import './cmps/navigator.cmp.css';
+@import './home-page.css';
 
 * {
   box-sizing: border-box;
@@ -35,6 +36,11 @@ button {
   overflow-y: scroll;
   height: calc(100vh - 150px);
   padding-bottom: 150px;
+}
+
+.home-page {
+  height: 100vh;
+  /* padding-top: 700px; */
 }
 
 
