@@ -12,8 +12,24 @@
   align-items: center;
 }
 
+.app-header .fa-horse-head {
+  font-size: 3.25rem;
+}
 
+.app-header span {
+  font-size: 3rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 
+@media(max-width:670px) {
+  .app-header .fa-horse-head {
+    font-size: 2.25rem;
+  }
+  
+  .app-header span {
+    display: none;
+  }
+}
 
 /* 
 .home-page a {
