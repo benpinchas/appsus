@@ -10,7 +10,7 @@ export default {
                   <router-link to="/email/inbox"><i class="fas fa-inbox"></i> Incoming</router-link>
                   <router-link to="/email/starred"><i class="fas fa-star"></i> Starred</router-link>
                   <router-link to="/email/sent"><i class="fas fa-paper-plane"></i> Sent</router-link>
-                  <progress-bar :emails="emails"></progress-bar>
+                  <!-- <progress-bar :emails="emails"></progress-bar> -->
                 </main>
           </section>
       `,

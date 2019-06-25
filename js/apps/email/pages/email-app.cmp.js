@@ -14,7 +14,7 @@ export default {
             <email-menu :emails="emails"></email-menu>
             
             <main>
-              <email-filter @set-filter="setFilter" @setSortBy="setSortBy" @searchTxt="searchByTxt"></email-filter>  
+              <email-filter :emails="emails" @set-filter="setFilter" @setSortBy="setSortBy" @searchTxt="searchByTxt"></email-filter>  
               <router-view class="router-view"  v-if="emails" :emails="emailsForDisplay"></router-view>
             </main>
             

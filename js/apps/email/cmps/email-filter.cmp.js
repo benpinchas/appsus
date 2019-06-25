@@ -1,5 +1,7 @@
 'use strict';
 
+import progressBar from './progress-bar.cmp.js';
+
 export default {
   template: `
         <section class="email-filter">
@@ -32,8 +34,11 @@ export default {
                   </select>
                   </div>
             </main>
+
+            <progress-bar :emails="emails"></progress-bar>
         </section>
     `,
+  props:['emails'],  
   data() {
     return {
       filterBy: 'all',
@@ -77,5 +82,8 @@ export default {
       this.currBtn = this.$refs.all;
       this.emitFilter(this.filterBy);
     }
-  }
+  },
+  components: {
+    progressBar
+  },
 };
